@@ -1,0 +1,59 @@
+.banner {
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    background: url(../imagens/Teste_Banner.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 17rem;
+    padding-bottom: 10rem;
+    margin: 0 8%;
+}
+
+.banner .conteudo {
+    text-align: center;
+    width: 100%;
+    max-width: 60rem;
+    padding: 0 1rem;
+}
+
+.banner .conteudo h3 {
+    color: var(--black);
+    font-size: 3rem;
+}
+
+.banner .conteudo h3 span {
+    color: var(--gold);
+}
+
+.banner .conteudo p {
+    color: var(--cinza);
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.banner-aneis {
+    background: url(../imagens/Banner_Aneis.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.banner-brincos {
+    background: url(../imagens/Banner_Brincos.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.banner-colares {
+    background: url(../imagens/Banner_Colares.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.banner-pulseiras {
+    background: url(../imagens/Banner_Pulseiras.jpg);
+    background-position: center;
+    background-size: cover;
+}
+

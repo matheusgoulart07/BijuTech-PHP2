@@ -1,0 +1,202 @@
+/* Responsividade */
+
+@media (max-width: 991px)
+{
+    html 
+    {
+        font-size: 55%;
+    }
+
+    .header 
+    {
+        padding: 2rem;
+    }
+
+    .section
+    {
+        padding: 2rem 9%;
+    }
+
+    .banner {
+        padding-top: 12rem;
+        padding-bottom: 6rem;
+        border-radius: 4rem;
+        margin: 0 3%; 
+    }
+
+    .banner .conteudo h3 {
+        font-size: 2.5rem;
+    }
+
+    .banner .conteudo p {
+        font-size: 1.5rem;
+    }
+
+    .produtos .carrossel-produtos .box {
+    max-width: 220px;
+    min-height: 350px;
+    }
+
+  .produtos .carrossel-produtos img {
+    max-width: 150px;
+    max-height: 150px;
+    }
+
+    .produtos .produtos-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+
+
+@media (max-width: 768px)
+{
+
+    #btn-menu 
+    {
+        display: inline-block;
+    }
+
+    .header .form-buscar
+    {
+        width: 90%;
+    } 
+
+    .header .menu-nav
+    {
+        position: absolute;
+        top: 110%;
+        right: -110%;
+        width: 30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: var(--branco);
+        display:flex;
+        flex-flow:column;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem0;
+    }
+
+.header .menu-nav.active{
+    right:0;
+    transition: .3s linear;
+}
+
+    .header .menu-nav a
+    {
+        font-size: 2rem;
+        margin: 2rem 2.5rem;
+        display: block;
+    }
+
+    .banner {
+        padding-top: 10rem;
+        padding-bottom: 5rem;
+        border-radius: 2rem;
+        margin: 0 2%;
+    }
+
+    .banner .conteudo h3 {
+        font-size: 2.2rem;
+    }
+
+    .banner .conteudo p {
+        font-size: 1.4rem;
+    }
+
+   .produtos .carrossel-produtos .box {
+    max-width: 200px;
+    min-height: 320px;
+    }
+
+  .produtos .carrossel-produtos img {
+    max-width: 140px;
+    max-height: 140px;
+    }
+
+    .produtos .produtos-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .pagina-carrinho {
+        padding: 0 15px;  
+    }
+
+    table {
+        width: 100%;       
+        font-size: 14px;   
+    }
+
+    .info-carrinho img {
+        width: 60px;
+        height: auto;      
+    }
+
+    td input {
+        width: 35px;
+    }
+}
+
+@media (max-width: 450px)
+{
+    html 
+    {
+        font-size: 50%;
+    }
+
+    .heading
+    {
+        font-size: 2.5rem;
+    }
+
+    .banner {
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+        border-radius: 1rem;
+        margin: 0 1rem;
+    }
+
+    .banner img{
+        max-width: 100%;
+        height:auto;
+        display: block;
+    }
+
+    
+    .banner .conteudo h3 {
+        font-size: 1.8rem;
+    }
+
+    .banner .conteudo p {
+        font-size: 1.2rem;
+    }
+
+    .produtos .carrossel-produtos .box {
+    max-width: 180px;
+    min-height: 300px;
+    }
+
+    .produtos .carrossel-produtos img {
+    max-width: 120px;
+    max-height: 120px;
+    }
+
+     .produtos .produtos-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .info-carrinho {
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+
+    .info-carrinho img {
+        margin-bottom: 10px;
+    }
+
+    .preco-total table {
+        width: 100%;
+        max-width: none; 
+    }
+}

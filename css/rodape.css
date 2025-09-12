@@ -1,0 +1,55 @@
+.rodape {
+    background: var(--preto-total);
+    color: var(--marfim);
+    padding: 64px 0;
+}
+
+.conteudo-rodape {
+    text-align: center;
+}
+
+.marca-rodape {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 32px;
+    color: var(--dourado);
+}
+
+.navegacao-rodape {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.link-rodape {
+    color: var(--champagne);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link-rodape:hover {
+    color: var(--dourado);
+}
+
+.direitos-autorais {
+    color: var(--champagne);
+    font-size: 14px;
+}
+
+.indicador-rolagem {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.linha-rolagem {
+    display: block;
+    width: 2px;
+    height: 48px;
+    background: var(--champagne);
+    animation: pulsarRolagem 2s infinite;
+}

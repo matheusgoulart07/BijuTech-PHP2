@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+
+    <!--Link dos ícones (busca, carrinho, login, etc)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Link dos ícones (busca, carrinho, login, etc)-->
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="cabecalho"></div>
+    
+    <main>
+    <div class="pagina-carrinho"> 
+
+        <h1 class="heading"><span>Carrinho</span></h1>
+
+        <table>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Subtotal</th>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="info-carrinho">
+                        <img src="imagens/anel_dourado.png">
+                        <div>
+                            <p>Anel Dourado</p>
+                            <small>Preço: R$15,00</small>
+                            <br>
+                            <a href="">Remover</a>
+                        </div>
+                    </div>
+                </td>
+
+                <td><input type="number" value="1"></td>
+                <td>R$15,00</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="info-carrinho">
+                        <img src="imagens/brinco_lua.png">
+                        <div>
+                            <p>Brinco de Lua</p>
+                            <small>Preço: R$10,00</small>
+                            <br>
+                            <a href="">Remover</a>
+                        </div>
+                    </div>
+                </td>
+
+                <td><input type="number" value="1"></td>
+                <td>R$10,00</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="info-carrinho">
+                        <img src="imagens/colar_dourado.png">
+                        <div>
+                            <p>Colar Dourado</p>
+                            <small>Preço: R$12,50</small>
+                            <br>
+                            <a href="">Remover</a>
+                        </div>
+                    </div>
+                </td>
+
+                <td><input type="number" value="1"></td>
+                <td>R$12,50</td>
+            </tr>
+
+        </table>
+
+        <div class="preco-total">
+
+            <table>
+                <tr> 
+                    <td>Subtotal</td>
+                    <td>R$37,50</td>
+                </tr>
+
+                 <tr>
+                    <td>Taxa</td>
+                    <td>R$00,00</td>
+                </tr>
+
+                 <tr>
+                    <td>Total</td>
+                    <td>R$37,50</td>
+                </tr>
+            </table>
+
+            <a href="" class="btn">Confirmar</a>
+
+        </div>
+    </div>
+    </main>
+
+    <script src="js/script.js"></script>
+     <footer class="rodape" id="rodape"></footer>
+
+</body>
+</html>

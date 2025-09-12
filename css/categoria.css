@@ -1,0 +1,40 @@
+.categoria .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr ));
+    gap: 1.5rem;
+}
+
+.categoria .box-container .box {
+    display: block; 
+    padding: 3rem 2rem;
+    background: var(--branco);
+    outline: var(--outline);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    text-decoration: none; 
+    color: inherit; 
+    border-radius: 8px; 
+}
+
+.categoria .box-container .box:hover {
+    box-shadow: 1px 1px 10px 4px var(--gold);
+}
+
+.categoria .box-container .box img {
+    margin: 1rem 0;
+    height: 15rem;
+}
+
+.categoria .box-container .box h3
+{
+    font-size: 2.5rem;
+    line-height: 1.8;
+    color: var(--black);
+}
+
+.categoria .box-container .box p{
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: var(--dourado);
+    padding-bottom: 1rem 0;
+}

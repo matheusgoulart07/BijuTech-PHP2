@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+    <div id="cabecalho"></div>
+
+    <main>
+    <h1 class="heading"><span>Cadastro</span></h1>
+
+    <div class="box-cadastro">
+    <form id="form-cadastro" action="#" method="post">
+
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" required>
+
+    <label for="email">E-mail</label>
+    <input type="email" name="email" id="email" placeholder="exemplo@dominio.com" required>
+    
+    <label for="senha">Senha</label>
+    <input type="password" name="senha" id="senha" required>
+    
+    <label for="telefone">Telefone</label>
+    <input type="tel" name="telefone" id="telefone" placeholder="(14) 12345-6789" required>
+    
+    <button type="submit" class="btn btn-center">Fazer Cadastro</button>
+     
+    <div id="erro-cadastro"></div>
+    </form>
+    </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <footer class="rodape" id="rodape"></footer>
+
+</body>
+</html>

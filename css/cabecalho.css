@@ -1,0 +1,247 @@
+header {
+    height: 90px;
+    padding: 0 9%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--branco);
+    box-shadow: var(--box-shadow);
+}
+
+.header .cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--black);
+    text-decoration: none;
+    gap: 0.5rem;
+}
+
+.header .cabecalho:hover span {
+    color: var(--gold);
+}
+
+/* Tamanho da Logo no Cabeçalho */
+.cabecalho .logo {
+    height: 50px;
+    width: auto;
+}
+
+
+.header .logo i {
+    color: var(--gold);
+}
+
+.header .menu-nav {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.7rem;
+    margin: 0 1rem;
+    color: var(--black);
+}
+
+.header .menu-nav a {
+    color: var(--black);
+    text-decoration: none;
+}
+
+.header .menu-nav a:hover {
+    color: var(--gold);
+}
+
+/* Ícones da direita do cabeçalho */
+.header .icones div {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: var(--cinza-claro);
+    color: var(--black);
+    font-size: 2rem;
+    margin-right: .3rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header .icones div:hover {
+    background: var(--gold);
+    color: var(--branco);
+}
+
+#btn-menu {
+    display: none;
+}
+
+.header .menu-nav.active
+{
+    right: 2rem;
+    transition: .4s linear;
+}
+
+/* Ícone da Lupa */
+.header .form-buscar {
+    border: 0px solid;
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    width: 50rem;
+    height: 5rem;
+    background: var(--branco);
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+
+.header .form-buscar.active {
+    right: 2rem;
+    transition: .4s linear;
+}
+
+
+.header .form-buscar input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 0 1.5rem;
+}
+
+
+.header .form-buscar label {
+    font-size: 2.2rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+
+.header .form-buscar label:hover {
+    color: var(--gold);
+}
+
+/* Ícone do Carrinho */
+.header .carrinho {
+    border: 0px solid;
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: var(--black);
+    width: 35rem;
+    background: var(--branco);
+}
+
+
+.header .carrinho.active {
+    right: 2rem;
+    transition: .4s linear;
+}
+
+/* Pré-visualização dos itens do Carrinho quando ele é clicado */
+.header .carrinho .box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin: 1rem 0;
+}
+
+
+.header .carrinho .box img {
+    height: 10rem;
+}
+
+/* Ícone de Lixo */
+.header .carrinho .box .fa-trash {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    cursor: pointer;
+    color: var(--cinza);
+    transform: translateY(-50%);
+}
+
+.header .carrinho .box .fa-trash:hover {
+    color: var(--gold);
+}
+
+.header .carrinho .box .conteudo h3 {
+    color: var(--black);
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+}
+
+.header .carrinho .box .conteudo span {
+    color: var(--cinza);
+    font-size: 1.6rem;
+}
+
+.header .carrinho .box .conteudo .quantidade {
+    padding-left: 1rem;
+}
+
+.header .carrinho .total {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    text-align: center;
+    color: var(--black);
+}
+
+.header .carrinho .btn {
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* Ícone de Login */
+.header .form-login {
+    border: 1px solid;
+    position: absolute;
+    width: 30rem;
+    top: 110%;
+    right: -110%;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    border-radius: .5rem;
+    background: var(--branco);
+    text-align: center;
+}
+
+.header .form-login.active {
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .form-login h3 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+
+.header .form-login .box {
+    width: 100%;
+    margin: .7rem 0;
+    background: var(--cinza-claro);
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+}
+
+

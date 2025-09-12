@@ -1,0 +1,53 @@
+.box-cadastro {
+    max-width: 400px;
+    width: 90%;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--branco);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    text-align: left;
+}
+
+.box-cadastro label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.box-cadastro input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--cinza);
+    border-radius: 8px;
+    font-size: 15px;
+    background: var(--cinza-claro);
+    transition: border 0.3s;
+}
+
+.box-cadastro input:focus {
+    border-color: var(--gold);
+    outline: none;
+}
+
+.links-login {
+   display: flex;
+    justify-content: center;
+    gap: 1rem; 
+    text-align: center;
+}
+
+.links-login p {
+    font-size: 1.4rem;
+    padding: .5rem 0;
+    color: var(--black);
+}
+
+.links-login p a {
+    color: var(--gold);
+    text-decoration: underline;
+}
+

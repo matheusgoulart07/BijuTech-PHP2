@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!--Link dos ícones (busca, carrinho, login, etc)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Link dos ícones (busca, carrinho, login, etc)-->
+
+    <link rel="stylesheet" href="css/style.css">
+    
+
+</head>
+<body>
+    
+    <div id="cabecalho"></div>
+
+    <main>
+    <h1 class="heading"><span>Login</span></h1>
+
+    <div class="box-cadastro">
+    <form id="form-login" action="#" method="post">
+
+        <div>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" placeholder="seu email" required> <br><br> 
+        </div>
+
+        <div>
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha" placeholder="sua senha" required> <br><br>
+        </div>
+        
+        <button type="submit" class="btn btn-center">Fazer Login</button>
+
+        <div id="erro-login"></div>
+    </form>
+    </div>
+
+    <div class="links-login">
+
+    <p>Não Possui uma Conta? <a href="cadastro.html">Crie Agora</a></p>
+    <p>Esqueceu sua Senha? <a href="#">Clique Aqui</a></p>
+
+    </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <footer class="rodape" id="rodape"></footer>
+
+</body>
+</html>

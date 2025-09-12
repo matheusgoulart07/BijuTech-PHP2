@@ -1,0 +1,109 @@
+.pagina-carrinho {
+    margin: 80px auto;
+    padding: 0 50px;   
+    max-width: 1200px; 
+}
+
+/* Tabela do Carrinho */
+table {
+    width: 90%;        
+    max-width: 1000px;  
+    margin: 0 auto;      
+    border-collapse: collapse;
+    background: var(--branco);
+}
+
+.info-carrinho {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info-carrinho p {
+    font-size: 1.6rem;
+    font-weight: 600px;
+}
+
+.info-carrinho small {
+    font-size: 1.4rem; 
+    color: var(--verde);       
+}
+
+th {
+    text-align: left;
+    padding: 5px;
+    color: var(--preto-total);
+    background: var(--gold);
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+td {
+    font-size: 1.5rem;
+    padding: 10px 5px;
+}
+
+td input {
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+    background: var(--cinza-claro);
+    color: var(--preto-total);
+}
+
+td a {
+    color: var(--vermelho);
+    font-size: 12px;
+}
+
+td img {
+    width: 80px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.preco-total {
+   display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    margin-top: 20px;
+}
+
+.preco-total table {
+    border-top: 3px solid var(--gold);
+    width: 100%;
+    max-width: 350px;
+}
+
+.preco-total td {
+    font-size: 1.6rem; 
+}
+
+.preco-total td:last-child {
+    font-weight: bold; 
+    font-size: 1.7rem; 
+}
+
+.preco-total .btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--black);
+    background: none;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.preco-total .btn:hover {
+    background: var(--gold);
+    color: var(--branco);
+}
+
+td:last-child {
+    text-align: right;
+}
+
+th:last-child {
+    text-align: right;
+}
