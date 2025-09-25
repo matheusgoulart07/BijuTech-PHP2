@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -19,7 +23,7 @@
 </head>
 <body>
 
-    <div id="cabecalho"></div>
+    <?php include "cabecalho.php" ?>
 
     <main>
     <section class="banner" id="banner">
@@ -39,25 +43,25 @@
 
         <div class="box-container">
 
-            <a href="aneis.html" class="box">
+            <a href="aneis.php" class="box">
                 <img src="imagens/anel_dourado.png">
                 <h3>Anéis</h3>
                 <p>Anéis que completam seu visual com elegância e sofisticação.</p>
                 </a>
 
-            <a href="brincos.html" class="box">
+            <a href="brincos.php" class="box">
                 <img src="imagens/brinco_ponto_de_luz.png">
                 <h3>Brincos</h3>
                 <p>Um acessório versátil que valoriza sua beleza de forma sutil e refinada.</p>
                 </a>
 
-            <a href="colares.html" class="box">
+            <a href="colares.php" class="box">
                 <img src="imagens/colar_dourado.png">
                 <h3>Colares</h3>
                 <p>Colares que valorizam seu visual, trazendo sofisticação em modelos clássicos e modernos.</p>
             </a>
 
-            <a href="pulseiras.html" class="box">
+            <a href="pulseiras.php" class="box">
                 <img src="imagens/pulseira_prata.png">
                 <h3>Pulseiras</h3>
                 <p>Pulseiras que combinam com todos os momentos.</p>
@@ -148,7 +152,7 @@
     </section>
     </main>
 
-    <footer class="rodape" id="rodape"></footer>
+    <?php include "rodape.php" ?>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/swiper.js"></script>

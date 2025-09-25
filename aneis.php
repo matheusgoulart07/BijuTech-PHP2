@@ -14,7 +14,7 @@
 
 <body>
 
-    <div id="cabecalho"></div>
+    <?php include "cabecalho.php" ?>
 
     <main>
     <section class="banner banner-aneis" id="banner">
@@ -74,7 +74,7 @@
     </section>
     </main>
 
-    <footer class="rodape" id="rodape"></footer>
+    <?php include "rodape.php" ?>
     <script src="js/script.js"></script>
 </body>
 </html>

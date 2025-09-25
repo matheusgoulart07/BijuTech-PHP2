@@ -1,3 +1,24 @@
+<?php
+        session_start();    
+        include "util.php"; 
+
+        if ($_POST) {
+            $login = $_POST['login'];
+            $senha = $_POST['senha'];
+
+            if ($login == "admin" && $senha == "1234") {
+                $_SESSION['sessaoConectado'] = true;
+                $_SESSION['sessaoLogin'] = $login;
+                header("Location: index.php");
+                exit;
+            } else {
+                $erro = "Login ou senha invalidos!";
+            }
+
+        }
+        
+    ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -15,17 +36,17 @@
 </head>
 <body>
     
-    <div id="cabecalho"></div>
+    <?php include "cabecalho.php"; ?>
 
     <main>
     <h1 class="heading"><span>Login</span></h1>
 
     <div class="box-cadastro">
-    <form id="form-login" action="#" method="post">
+    <form id="form-login" action="login.php" method="post">
 
         <div>
-        <label for="email">E-mail:</label>
-        <input type="email" name="email" id="email" placeholder="seu email" required> <br><br> 
+        <label for="email">Login:</label>
+        <input type="text" name="login" id="login" placeholder="seu email" required> <br><br> 
         </div>
 
         <div>
@@ -35,7 +56,10 @@
         
         <button type="submit" class="btn btn-center">Fazer Login</button>
 
-        <div id="erro-login"></div>
+        <?php if (isset($erro)) { ?>
+                <p style="color:red;"><?php echo $erro; ?></p>
+        <?php } ?>
+        <!--<div id="erro-login"></div>-->
     </form>
     </div>
 
@@ -48,7 +72,7 @@
     </main>
 
     <script src="js/script.js"></script>
-    <footer class="rodape" id="rodape"></footer>
+    <?php include "rodape.php" ?>
 
 </body>
 </html>

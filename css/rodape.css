@@ -1,10 +1,7 @@
-.rodape {
+.conteudo-rodape {
     background: var(--preto-total);
     color: var(--marfim);
     padding: 64px 0;
-}
-
-.conteudo-rodape {
     text-align: center;
 }
 
