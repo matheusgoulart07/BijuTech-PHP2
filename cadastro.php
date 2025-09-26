@@ -1,3 +1,10 @@
+<?php 
+
+session_start();
+include "util.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,7 +19,9 @@
 </head>
 <body>
     
-    <div id="cabecalho"></div>
+    <?php 
+        include "cabecalho.php";
+    ?>
 
     <main>
     <h1 class="heading"><span>Cadastro</span></h1>
@@ -40,7 +49,9 @@
     </main>
 
     <script src="js/script.js"></script>
-    <footer class="rodape" id="rodape"></footer>
+    <?php 
+        include "rodape.php";
+    ?>
 
 </body>
 </html>

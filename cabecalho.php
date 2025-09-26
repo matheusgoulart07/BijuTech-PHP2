@@ -12,6 +12,15 @@
             <a href="#produtos">Produtos</a>
             <a href="#rodape">Sobre</a>
 
+            <?php 
+            
+            if (isset($_SESSION['sessaoConectado']) && $_SESSION['sessaoConectado'] && isset($_SESSION['admin']) && $_SESSION['admin']) {
+                echo "<a href='usuarios.php'>Gerenciar Usuários</a>";
+                echo "<a href='produtos.php'>Gerenciar Produtos</a>";
+            }
+            
+            ?>
+
         </nav>
 
         <div class="icones">
@@ -23,7 +32,7 @@
             <?php 
             
             if (isset($_SESSION['sessaoConectado']) && $_SESSION['sessaoConectado']) {
-                $login = $_SESSION['sessaoLogin'];
+                $login = $_SESSION['login'];
 
                  echo "<div class='fa fa-user' id='btn-login' title='Logado como $login'></div>";
 
@@ -50,8 +59,9 @@
             <?php 
             
             if (isset($_SESSION['sessaoConectado']) && $_SESSION['sessaoConectado']) {
-                $login = $_SESSION['sessaoLogin'];
+                $login = $_SESSION['login'];
                 echo "<p>Olá, <b>$login</b></p>";
+    
                 echo "<a href='logout.php' class='btn'>Sair</a>";
             } else {
                 echo "<a href='cadastro.php' class='btn'>Cadastro</a>";

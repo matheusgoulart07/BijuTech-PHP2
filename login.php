@@ -1,20 +1,32 @@
-<?php
-        session_start();    
-        include "util.php"; 
+<?php   
 
         if ($_POST) {
-            $login = $_POST['login'];
+
+            include "util.php";
+            session_start();
+
+            $usuario = $_POST['usuario'];
             $senha = $_POST['senha'];
 
-            if ($login == "admin" && $senha == "1234") {
+            $conn = conecta();
+
+            $select = $conn->prepare("select nome, senha, admin from usuario where email = :usuario");
+            $select->bindParam(":usuario", $usuario);
+            $select->execute();
+            $linha = $select->fetch();
+
+            if ($linha && password_verify($senha, $linha['senha']) ) {
                 $_SESSION['sessaoConectado'] = true;
-                $_SESSION['sessaoLogin'] = $login;
+                $_SESSION['admin'] = $linha['admin'];
+                $_SESSION['login'] = $linha['nome'];
                 header("Location: index.php");
                 exit;
             } else {
-                $erro = "Login ou senha invalidos!";
+                $_SESSION['sessaoConectado'] = false;
+                $_SESSION['admin'] = false;
+                $_SESSION['login'] = "";
+                $erro = "Usuário ou senha inválidos!";
             }
-
         }
         
     ?>
@@ -45,8 +57,8 @@
     <form id="form-login" action="login.php" method="post">
 
         <div>
-        <label for="email">Login:</label>
-        <input type="text" name="login" id="login" placeholder="seu email" required> <br><br> 
+        <label for="usuario">Usuário:</label>
+        <input type="text" name="usuario" id="usuario" placeholder="seu usuario" required> <br><br> 
         </div>
 
         <div>
@@ -65,7 +77,7 @@
 
     <div class="links-login">
 
-    <p>Não Possui uma Conta? <a href="cadastro.html">Crie Agora</a></p>
+    <p>Não Possui uma Conta? <a href="cadastro.php">Crie Agora</a></p>
     <p>Esqueceu sua Senha? <a href="#">Clique Aqui</a></p>
 
     </div>
