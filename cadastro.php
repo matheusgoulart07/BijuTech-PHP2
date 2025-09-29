@@ -2,6 +2,25 @@
 
 session_start();
 include "util.php";
+if($_POST){
+    $conn = conecta();
+    $varSQL = "insert into usuario (nome,email,senha,telefone)
+            values (:nome,:email,:senha,:telefone)";
+    $senha_hash = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+    $insert= $conn->prepare($varSQL);
+    $insert -> bindParam(':nome',$_POST['nome']);
+    $insert -> bindParam(':email',$_POST['email']);
+    $insert->bindParam(':senha', $senha_hash);
+    $insert -> bindParam(':telefone',$_POST['telefone']);
+   
+    if ($insert->execute()) {
+        $_SESSION['sessaoConectado'] = true;
+        $_SESSION['admin'] = false;
+        $_SESSION['login'] = $_POST['nome'];
+        header("Location: index.php");
+        exit;
+    }
+}
 
 ?>
 
@@ -27,7 +46,7 @@ include "util.php";
     <h1 class="heading"><span>Cadastro</span></h1>
 
     <div class="box-cadastro">
-    <form id="form-cadastro" action="#" method="post">
+    <form id="form-cadastro" action="cadastro.php" method="post">
 
     <label for="nome">Nome</label>
     <input type="text" name="nome" id="nome" required>
@@ -46,12 +65,14 @@ include "util.php";
     <div id="erro-cadastro"></div>
     </form>
     </div>
+   
     </main>
 
     <script src="js/script.js"></script>
     <?php 
         include "rodape.php";
     ?>
-
+    
 </body>
 </html>
+
