@@ -4,7 +4,7 @@ function conecta($param = "")
 {
     if ($param == "")
     {
-        $param = "pgsql:host=localhost;port=5432;dbname=ecommerce;user=postgres;password=postgres";
+        $param = "pgsql:host=projetoscti.com.br;port=54432;dbname=eq3.inf2;user=eq3inf2;password=eq32596";
     }
 
     try {
