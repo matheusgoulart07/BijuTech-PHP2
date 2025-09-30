@@ -18,7 +18,7 @@ if($_POST){
         $_SESSION['admin'] = false;
         $_SESSION['login'] = $_POST['nome'];
         header("Location: index.php");
-        exit;
+        exit("Redirecionando...");
     }
 }
 
