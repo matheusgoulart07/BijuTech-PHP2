@@ -12,7 +12,7 @@ document.querySelector('#btn-buscar').onclick = () => {
 };
 
 document.querySelector('#btn-carrinho').onclick = () => {
-    window.location.href = "carrinho.html";
+    window.location.href = "carrinho.php";
 };
 
 document.querySelector('#btn-login').onclick = () => {

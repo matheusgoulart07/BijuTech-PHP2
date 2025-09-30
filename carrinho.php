@@ -103,10 +103,4 @@
 
         </div>
     </div>
-    </main>
-
-    <script src="js/script.js"></script>
-     <footer class="rodape" id="rodape"></footer>
-
-</body>
-</html>
+    
