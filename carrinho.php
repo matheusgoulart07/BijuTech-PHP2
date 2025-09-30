@@ -103,6 +103,53 @@
 
         </div>
     </div>
+    <?php
+        function AtualizaGride(){
+           echo $id_compra;
+           $varSql="SELECT * FROM Compra_Produto where id_compra=$id_compra";
+           foreach($varSql as $item){
+               echo $item['id_compra'];
+               if($status =="carrinho"){
+                   echo"<tr>
+                   <td>
+                         <a href='incluirCarrinho.php?'>Incluir</a>
+                        <a href='excluirCarrinho.php?'>Excluir</a>
+                    </td>";
+                }
+                $total+=$subtotal;
+            }
+            echo"<tr>
+                <td colspan=2>Total</td>
+                <td>R$ $total</td>
+                <td>Status</td>
+                <td>$status</td>
+                </tr>";
+            if($_SESSION['STATUSCONECTADO']=="carrinho" and $total>0 and $status=="carrinho"){
+                echo"<a href='finalizarCompra.php?id=$id_compra'>Finalizar Compra</a>";
+            }
+        }
+        $SESSAO['SESSION_ID']=$session_id;
+        $operacao=$_GET['operacao'];
+        $id_produto=$_GET['id_produto'];
+        $status="carrinho";
+        $qt="Select count Compra where SESSAO=$session_id";
+        $id_usuario=SESSAO["LOGIN"];
+        if($qt==0){
+            $hoje=date('Y-m-d');
+            $conn=conecta();
+            $varSql="INSERT INTO Compra (id,data_compra,id_sessao) values ($id_usuario, $hoje, $session_id)";
+            $id_compra=$conn->lastInsertId();
+        }
+        else{
+            if($SESSAO['CONECTADO']!=true){
+                $varSql="SELECT id_compra, status FROM Compra where sessao=$id_usuario";
+            }
+            else{
+                $varSql="SELECT id_compra, status FROM Compra where sessao=$session_id";
+            }
+                
+        }
+    ?>
     </main>
 
     <script src="js/script.js"></script>
