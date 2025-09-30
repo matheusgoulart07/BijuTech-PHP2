@@ -32,13 +32,11 @@
             <?php 
             
             if (isset($_SESSION['sessaoConectado']) && $_SESSION['sessaoConectado']) {
-                $login = $_SESSION['login'];
-
-                 echo "<div class='fa fa-user' id='btn-login' title='Logado como $login'></div>";
-
+                $login = isset($_SESSION['login']) ? $_SESSION['login'] : "Usuário";
+                echo "<div class='fa fa-user' id='btn-login' title='Logado como $login'></div>";
                 } else {
-                        echo "<div class='fa fa-user' id='btn-login'></div>";
-                    }
+                    echo "<div class='fa fa-user' id='btn-login'></div>";
+                }
                     ?>
             
         </div>

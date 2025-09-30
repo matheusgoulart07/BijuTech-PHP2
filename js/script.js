@@ -114,7 +114,6 @@ if (formCadastro) {
             erroCadastro.innerText = mensagens.join("\n");
             erroCadastro.style.color = "red";
         } else {
-            e.preventDefault();
             erroCadastro.innerText = "✅ Cadastro realizado com sucesso!";
             erroCadastro.style.color = "green";
         }
