@@ -83,7 +83,7 @@ session_start();
                             <img src="imagens/anel_dourado2.png">
                             <h1>Anel Dourado</h1>
                             <div class="preco">R$50,00</div>
-                            <a class="btn" href="carrinho.php">Adicionar ao Carrinho</a>
+                            <a class="btn" href="carrinhoSub.php?id_produto=1&nome=anel dourado&imagem=anel_dourado.png">Adicionar ao Carrinho</a>
                         </div>
                     </div>
 
