@@ -26,7 +26,9 @@
         <div class="icones">
 
             <div class="fa fa-bars" id="btn-menu"></div>
+            <!--
             <div class="fa fa-search" id="btn-buscar"></div>
+             -->
             <div class="fa fa-shopping-cart" id="btn-carrinho"></div>
 
             <?php 
@@ -41,7 +43,8 @@
             
         </div>
 </header>
-
+        
+        <!--
         <form class="form-buscar">
 
             <input type="search" id="caixa-buscar" placeholder="Pesquise aqui">
@@ -49,6 +52,7 @@
             <label for="caixa-buscar" class="fa fa-search"></label>
 
         </form>
+            -->
 
 
         <form action="#" class="form-login">

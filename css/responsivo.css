@@ -91,6 +91,9 @@
     }
 
     .banner {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right center;
         padding-top: 10rem;
         padding-bottom: 5rem;
         border-radius: 2rem;

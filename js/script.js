@@ -1,15 +1,15 @@
 // Animações dos ícones do cabeçalho
-let formBuscar = document.querySelector('.form-buscar');
+/* let formBuscar = document.querySelector('.form-buscar'); */
 let carrinho = document.querySelector('.carrinho');
 let formLogin = document.querySelector('.form-login');
 let menuNav = document.querySelector('.menu-nav');
 
-document.querySelector('#btn-buscar').onclick = () => {
-    formBuscar.classList.toggle('active');
+/* document.querySelector('#btn-buscar').onclick = () => {
+     formBuscar.classList.toggle('active');
     carrinho.classList.remove('active');
     formLogin.classList.remove('active');
     menuNav.classList.remove('active');
-};
+}; */
 
 document.querySelector('#btn-carrinho').onclick = () => {
     window.location.href = "carrinho.php";
@@ -17,20 +17,20 @@ document.querySelector('#btn-carrinho').onclick = () => {
 
 document.querySelector('#btn-login').onclick = () => {
     formLogin.classList.toggle('active');
-    formBuscar.classList.remove('active');
+   /* formBuscar.classList.remove('active'); */
     carrinho.classList.remove('active');
     menuNav.classList.remove('active');
 };
 
 document.querySelector('#btn-menu').onclick = () => {
     menuNav.classList.toggle('active');
-    formBuscar.classList.remove('active');
+   /* formBuscar.classList.remove('active'); */
     carrinho.classList.remove('active');
     formLogin.classList.remove('active');
 };
 
 window.onscroll = () => {
-    formBuscar.classList.remove('active');
+   /* formBuscar.classList.remove('active'); */
     carrinho.classList.remove('active');
     formLogin.classList.remove('active');
     menuNav.classList.remove('active');
