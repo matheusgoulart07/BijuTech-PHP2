@@ -17,6 +17,7 @@ $select = $conn->query($varSQL);
 
 <?php include "cabecalho.php" ?>
 
+<main class="pagina-crud pagina-usuarios">
 <h2>Lista de Usuários</h2>
 
 <table border="1">
@@ -34,25 +35,23 @@ $select = $conn->query($varSQL);
         while ($linha = $select->fetch()) {
             $id = $linha['id_usuario'];
 
-            echo "<tr>
-                <td>".$linha['nome']."</td>
-                <td>".$linha['email']."</td>
-                <td>".$linha['senha']."</td>
-                <td>".$linha['telefone']."</td>
-                <td>";
-
-            echo "</td>
-                <td>
-                    <a href='alterarUsuario.php?id_usuario=$id'>Alterar</a>
-                    <a href='excluirUsuario.php?id_usuario=$id'>Excluir</a>
-                </td>
-            </tr>";
+                    echo "<tr>
+            <td>".$linha['nome']."</td>
+            <td>".$linha['email']."</td>
+            <td>".$linha['senha']."</td>
+            <td>".$linha['telefone']."</td>
+            <td>
+                <a href='alterarUsuario.php?id_usuario=$id'>Alterar</a>
+                <a href='excluirUsuario.php?id_usuario=$id'>Excluir</a>
+            </td>
+        </tr>";
         }
         ?>
     </tbody>
 </table>
 
-<a href="adicionarUsuario.php">Adicionar Usuário</a>
+<a href="adicionarUsuario.php" class="btn btn-add">Adicionar Usuário</a>
+</main>
 
 <?php include "rodape.php" ?>
 

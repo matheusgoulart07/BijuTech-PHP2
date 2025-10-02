@@ -18,6 +18,7 @@ $select = $conn->query($varSQL);
 
 <?php include "cabecalho.php" ?>
 
+<main class="pagina-crud pagina-produtos">
 <h2>Lista de Produtos</h2>
 
 <table border="1">
@@ -58,7 +59,8 @@ $select = $conn->query($varSQL);
     </tbody>
 </table>
 
-<a href="adicionarProduto.php">Adicionar Produto</a>
+<a href="adicionarProduto.php" class="btn btn-add">Adicionar Produto</a>
+</main>
 
 <?php include "rodape.php" ?>
 
