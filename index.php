@@ -1,5 +1,10 @@
 <?php 
 session_start();
+include "util.php";
+$conn = conecta();
+
+$varSQL = "select id_produto, nome, valor_unitario, imagem from produto";
+
 ?>
 
 <!DOCTYPE html>
@@ -152,7 +157,7 @@ session_start();
     </section>
     </main>
 
-    <?php include "rodape.php" ?>
+    <footer class="rodape"><?php include "rodape.php" ?></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/swiper.js"></script>

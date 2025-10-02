@@ -10,7 +10,7 @@
             <a href="#banner">Início</a>
             <a href="#categoria">Categorias</a>
             <a href="#produtos">Produtos</a>
-            <a href="#rodape">Sobre</a>
+            <a href="quemSomos.php">Sobre</a>
 
             <?php 
             

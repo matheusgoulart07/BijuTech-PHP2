@@ -11,8 +11,11 @@ $select = $conn->query($varSQL);
 <head>
     <meta charset="UTF-8">
     <title>Usuários</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<?php include "cabecalho.php" ?>
 
 <h2>Lista de Usuários</h2>
 
@@ -50,6 +53,8 @@ $select = $conn->query($varSQL);
 </table>
 
 <a href="adicionarUsuario.php">Adicionar Usuário</a>
+
+<?php include "rodape.php" ?>
 
 </body>
 </html>

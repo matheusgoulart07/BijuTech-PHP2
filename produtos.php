@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include "util.php"; 
 $conn = conecta();
 
@@ -11,8 +12,11 @@ $select = $conn->query($varSQL);
 <head>
     <meta charset="UTF-8">
     <title>Produtos</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<?php include "cabecalho.php" ?>
 
 <h2>Lista de Produtos</h2>
 
@@ -55,6 +59,8 @@ $select = $conn->query($varSQL);
 </table>
 
 <a href="adicionarProduto.php">Adicionar Produto</a>
+
+<?php include "rodape.php" ?>
 
 </body>
 </html>
