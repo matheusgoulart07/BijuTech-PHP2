@@ -1,3 +1,9 @@
+<?php 
+session_start();
+include "util.php";
+$conn = conecta();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -16,7 +22,7 @@
     
     <?php include "cabecalho.php" ?>
 
-         <main class="flex-fill">
+         <main class="pagina-quemSomos">
             <div class="container">
                 <h1>Quem Somos</h1>
                 <hr>
@@ -46,7 +52,7 @@
         </main>
 
     
-    <?php include "rodape.php" ?>
+    <footer class="rodape"><?php include "rodape.php" ?></footer>
     <script src="js/script.js"></script>
 
 </body>

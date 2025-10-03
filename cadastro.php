@@ -68,9 +68,7 @@ if($_POST){
     </main>
 
     <script src="js/script.js"></script>
-    <?php 
-        include "rodape.php";
-    ?>
+    <footer class="rodape"><?php include "rodape.php" ?></footer>
     
 </body>
 </html>

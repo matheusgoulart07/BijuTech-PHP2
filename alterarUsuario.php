@@ -1,9 +1,25 @@
-<html>
-<body>
 <?php 
+session_start();
 include "util.php";
 $conn = conecta();
+?>
 
+<html>
+
+<head>
+  <meta charset="UTF-8">
+    <title>Alterar Usuário</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!--Link dos ícones (busca, carrinho, login, etc)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Link dos ícones (busca, carrinho, login, etc)-->
+</head>
+
+<body>
+
+<?php include "cabecalho.php" ?>
+
+<?php 
 $id_usuario = $_GET['id_usuario'];
 
 $varSQL = "select * from usuario where id_usuario = :id_usuario";
@@ -21,6 +37,7 @@ $telefone = $linha['telefone'];
 
 ?>
 
+<main class="form-crud form-alterarUsuario">
 <form action="updateUsuario.php" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id_usuario" value="<?php echo htmlspecialchars($id_usuario); ?>">
 
@@ -39,5 +56,10 @@ $telefone = $linha['telefone'];
 
     <button type="submit">Salvar Alterações</button>
 </form>
+</main>
+
+<footer class="rodape"><?php include "rodape.php" ?></footer>
+<script src="js/script.js"></script>
+
 </body>
 </html>

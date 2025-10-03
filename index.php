@@ -4,7 +4,8 @@ include "util.php";
 $conn = conecta();
 
 $varSQL = "select id_produto, nome, valor_unitario, imagem from produto";
-
+$select = $conn->prepare($varSQL);
+$select->execute();
 ?>
 
 <!DOCTYPE html>
@@ -82,76 +83,23 @@ $varSQL = "select id_produto, nome, valor_unitario, imagem from produto";
 
         <div class="swiper carrossel-produtos">
                 <div class="swiper-wrapper">
-                    
-                    <div class="swiper-slide">
-                        <div class="box"> 
-                            <img src="imagens/anel_dourado2.png">
-                            <h1>Anel Dourado</h1>
-                            <div class="preco">R$50,00</div>
-                            <a class="btn" href="carrinhoSub.php?id_produto=1">Adicionar ao Carrinho</a>
-                        </div>
-                    </div>
-
-                      <div class="swiper-slide">
-                        <div class="box"> 
-                            <img src="imagens/brinco_coracao_dourado.png">
-                            <h1>Brinco Coração</h1>
-                            <div class="preco">R$70,00</div>
-                            <button class="btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
+                    <?php while ($produto= $select->fetch()): ?>
 
                     <div class="swiper-slide">
                         <div class="box"> 
-                            <img src="imagens/colar_prata.png">
-                            <h1>Colar Prata</h1>
-                            <div class="preco">R$45,00</div>
-                            <button class="btn">Adicionar ao Carrinho</button>
+                            <img src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
+                            <h1><?php echo $produto['nome']; ?></h1>
+                            <div class="preco"><?php echo($produto['valor_unitario']);?></div>
+                            <a class="btn" href="carrinhoSub.php?id_produto=<?php echo $produto['id_produto'];?>">Adicionar ao Carrinho</a>
                         </div>
                     </div>
-
-                    <div class="swiper-slide">
-                        <div class="box"> 
-                           <img src="imagens/pulseira_estrela.png">
-                            <h1>Pulseira Estrela</h1>
-                            <div class="preco">R$45,00</div>
-                            <button class="btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="box"> 
-                             <img src="imagens/anel_branco.png">
-                            <h1>Anel Branco</h1>
-                            <div class="preco">R$70,00</div>
-                            <button class="btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-
-                     <div class="swiper-slide">
-                        <div class="box"> 
-                           <img src="imagens/brinco_ponto_de_luz.png">
-                            <h1>Brinco Preto</h1>
-                            <div class="preco">R$45,00</div>
-                            <button class="btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-
-                     <div class="swiper-slide">
-                        <div class="box"> 
-                            <img src="imagens/pulseira_dourada2.png">
-                            <h1>Pulseira Dourada</h1>
-                            <div class="preco">R$70,00</div>
-                            <button class="btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                     
+                    <?php endwhile; ?>
                 </div>
 
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
-
+   
         </div>
 
     </section>

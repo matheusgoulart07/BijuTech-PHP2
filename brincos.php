@@ -74,7 +74,7 @@
     </section>
     </main>
 
-    <?php include "rodape.php" ?>
+    <footer class="rodape"><?php include "rodape.php" ?></footer>
     <script src="js/script.js"></script>
 
 </body>

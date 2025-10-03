@@ -56,6 +56,12 @@ header {
     color: var(--gold);
 }
 
+.header .icones {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 /* Ícones da direita do cabeçalho */
 .header .icones div {
     height: 4.5rem;

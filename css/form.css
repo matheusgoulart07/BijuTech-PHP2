@@ -1,0 +1,74 @@
+/* FORMULÁRIOS GERAIS */
+form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--branco);
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* LABELS (pode trocar por <label> depois se quiser) */
+form label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+/* INPUTS, TEXTAREA E SELECT */
+form input[type="text"],
+form input[type="number"],
+form input[type="file"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--cinza-claro);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: var(--branco);
+    transition: border 0.2s;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+    border-color: var(--azul-principal);
+    outline: none;
+}
+
+/* TEXTAREA */
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* BOTÕES */
+form button {
+    background: var(--azul-principal);
+    color: var(--branco);
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: var(--azul-hover);
+}
+
+/* ESTILOS ESPECÍFICOS PARA CRUD */
+.form-crud {
+    margin-top: 5rem; /* caso precise compensar header fixo */
+}
+
+/* ESTILO ESPECÍFICO DO FORM DE ADICIONAR PRODUTO */
+.form-adicionarProduto form {
+    border-left: 5px solid var(--dourado);
+}

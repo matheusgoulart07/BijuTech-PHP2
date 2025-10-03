@@ -1,9 +1,25 @@
-<html>
-<body>
-<?php 
+<?php  
+session_start();
 include "util.php";
 $conn = conecta();
+?>
 
+<html>
+
+<head>
+  <meta charset="UTF-8">
+    <title>Alterar Produto</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!--Link dos ícones (busca, carrinho, login, etc)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Link dos ícones (busca, carrinho, login, etc)-->
+</head>
+
+<body>
+
+<?php include "cabecalho.php" ?>
+
+<?php 
 $id_produto = $_GET['id_produto'];
 
 $varSQL = "select * from produto where id_produto = :id_produto";
@@ -24,6 +40,7 @@ $htmlFoto = (!empty($varFoto) && file_exists($varFoto))
     : "";
 ?>
 
+<main class="form-crud form-alterarProduto">
 <form action="updateProduto.php" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id_produto" value="<?php echo htmlspecialchars($id_produto); ?>">
 
@@ -49,5 +66,10 @@ $htmlFoto = (!empty($varFoto) && file_exists($varFoto))
 
     <button type="submit">Salvar Alterações</button>
 </form>
+</main>
+
+<footer class="rodape"><?php include "rodape.php" ?></footer>
+<script src="js/script.js"></script>
+
 </body>
 </html>

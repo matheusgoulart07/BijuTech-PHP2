@@ -13,6 +13,9 @@ $select = $conn->query($varSQL);
     <meta charset="UTF-8">
     <title>Produtos</title>
     <link rel="stylesheet" href="css/style.css">
+    <!--Link dos ícones (busca, carrinho, login, etc)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Link dos ícones (busca, carrinho, login, etc)-->
 </head>
 <body>
 
@@ -62,7 +65,8 @@ $select = $conn->query($varSQL);
 <a href="adicionarProduto.php" class="btn btn-add">Adicionar Produto</a>
 </main>
 
-<?php include "rodape.php" ?>
+<footer class="rodape"><?php include "rodape.php" ?></footer>
+<script src="js/script.js"></script>
 
 </body>
 </html>
