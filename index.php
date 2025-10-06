@@ -81,7 +81,7 @@ $select->execute();
     <section class="produtos" id="produtos">
         <h1 class="heading"><span>Produtos</span></h1>
 
-        <div class="swiper carrossel-produtos">
+       <div class="swiper carrossel-produtos">
                 <div class="swiper-wrapper">
                     <?php while ($produto= $select->fetch()): ?>
 
@@ -90,7 +90,7 @@ $select->execute();
                             <img src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
                             <h1><?php echo $produto['nome']; ?></h1>
                             <div class="preco"><?php echo($produto['valor_unitario']);?></div>
-                            <a class="btn" href="carrinhoSub.php?id_produto=<?php echo $produto['id_produto'];?>">Adicionar ao Carrinho</a>
+                            <a class="btn" href="adicionarAoCarrinho.php?id_produto=<?php echo $produto['id_produto'];?>">Adicionar ao Carrinho</a>
                         </div>
                     </div>
                     <?php endwhile; ?>

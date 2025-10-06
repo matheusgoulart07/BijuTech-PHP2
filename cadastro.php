@@ -17,7 +17,15 @@ if($_POST){
         $_SESSION['sessaoConectado'] = true;
         $_SESSION['admin'] = false;
         $_SESSION['login'] = $_POST['nome'];
-        header("Location: index.php");
+        $_SESSION['usuario'] = [
+            'nome' => $_POST['nome'],
+            'email' => $_POST['email']
+        ];
+
+        $redirect = $_GET['redirect'] ?? 'index.php';
+        header("Location: " . $redirect);
+        exit;
+
     }
 }
 

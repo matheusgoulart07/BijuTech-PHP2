@@ -7,6 +7,7 @@
 
             $usuario = $_POST['usuario'];
             $senha = $_POST['senha'];
+            $redirect = $_GET['redirect'] ?? 'index.php';
 
             $conn = conecta();
 
@@ -19,7 +20,12 @@
                 $_SESSION['sessaoConectado'] = true;
                 $_SESSION['admin'] = $linha['admin'];
                 $_SESSION['login'] = $linha['nome'];
-                header("Location: index.php");
+                $_SESSION['usuario'] = [ 
+                    'id' => $linha['id'],
+                    'nome' => $linha['nome'],
+                    'email' => $linha['email']
+                ];
+                header("Location: " . $redirect);
                 exit;
             } else {
                 $_SESSION['sessaoConectado'] = false;
