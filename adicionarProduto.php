@@ -42,7 +42,7 @@ $conn = conecta();
       <input type="file" name="imagem" accept="image/*" required>
       <br><br>
 
-      <button type="submit">Cadastrar Produto</button>
+      <button type="submit" class="btn btn center">Cadastrar Produto</button>
 
     </form>
     </main>

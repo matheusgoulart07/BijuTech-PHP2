@@ -190,4 +190,8 @@ header {
     text-transform: none;
 }
 
-
+.form-login .btn {
+    display: block;
+    width: 12rem;         
+    margin: 1rem auto;       
+}

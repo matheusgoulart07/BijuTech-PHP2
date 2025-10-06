@@ -64,7 +64,7 @@
                 $login = $_SESSION['login'];
                 echo "<p>Olá, <b>$login</b></p>";
     
-                echo "<a href='logout.php' class='btn'>Sair</a>";
+                echo "<a href='logout.php' class='btn' onclick='return confirmarLogout()'>Sair</a>";
             } else {
                 echo "<a href='cadastro.php' class='btn'>Cadastro</a>";
                 echo "<a href='login.php' class='btn'>Login</a>";
@@ -73,3 +73,4 @@
             ?>
             
         </form>
+<script src="js/logout.js"></script>
