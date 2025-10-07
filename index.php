@@ -3,7 +3,7 @@ session_start();
 include "util.php";
 $conn = conecta();
 
-$varSQL = "select id_produto, nome, valor_unitario, imagem from produto";
+$varSQL = "select id_produto, nome, valor_unitario, imagem from produto where excluido = false";
 $select = $conn->prepare($varSQL);
 $select->execute();
 ?>
@@ -83,28 +83,8 @@ $select->execute();
 
        <div class="swiper carrossel-produtos">
                 <div class="swiper-wrapper">
-<<<<<<< HEAD
-                    
-                    <div class="swiper-slide">
-                        <div class="box"> 
-                            <img src="imagens/anel_dourado2.png">
-                            <h1>Anel Dourado</h1>
-                            <div class="preco">R$50,00</div>
-                            <a class="btn" href="carrinhoSub.php?id_produto=1&nome=anel dourado&imagem=anel_dourado.png">Adicionar ao Carrinho</a>
-                        </div>
-                    </div>
 
-                      <div class="swiper-slide">
-                        <div class="box"> 
-                            <img src="imagens/brinco_coracao_dourado.png">
-                            <h1>Brinco Coração</h1>
-                            <div class="preco">R$70,00</div>
-                            <button class="btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-=======
                     <?php while ($produto= $select->fetch()): ?>
->>>>>>> 78bb4e0c8b86cb900d95f58a3aec0e27ccb36f18
 
                     <div class="swiper-slide">
                         <div class="box"> 

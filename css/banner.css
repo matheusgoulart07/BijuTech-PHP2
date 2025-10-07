@@ -2,7 +2,7 @@
     border-radius: 3rem;
     display: flex;
     justify-content: center;
-    background: url(../imagens/Teste_Banner.png) no-repeat;
+    background: url(../imagens/Banner_Degrade.jpg) no-repeat;
     background-position: center;
     background-size: cover;
     padding-top: 17rem;
@@ -18,12 +18,12 @@
 }
 
 .banner .conteudo h3 {
-    color: var(--black);
+    color: var(--preto-total);
     font-size: 3rem;
 }
 
 .banner .conteudo h3 span {
-    color: var(--gold);
+    color: var(--preto-total);
 }
 
 .banner .conteudo p {

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'util.php';
+include 'util.php';
 
 // Cria conexão PDO
 $pdo = conecta();

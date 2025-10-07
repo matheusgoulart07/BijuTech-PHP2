@@ -7,10 +7,10 @@
 
         <nav class="menu-nav">
 
-            <a href="#banner">Início</a>
+            <a href="index.php">Início</a>
             <a href="#categoria">Categorias</a>
             <a href="#produtos">Produtos</a>
-            <a href="quemSomos.php">Sobre</a>
+            <a href="#rodape">Sobre</a>
 
             <?php 
             
@@ -25,23 +25,32 @@
 
         <div class="icones">
 
-            <div class="fa fa-bars" id="btn-menu"></div>
+            <div class="fa fa-bars icone-simples" id="btn-menu"></div>
             <!--
             <div class="fa fa-search" id="btn-buscar"></div>
              -->
-            <div class="fa fa-shopping-cart" id="btn-carrinho"></div>
+            <div id="btn-carrinho" class="icone-botao">
+                <i class="fa fa-shopping-cart"></i>
+                <span>Carrinho</span>
+            </div>
 
             <?php 
-            
-            if (isset($_SESSION['sessaoConectado']) && $_SESSION['sessaoConectado']) {
-                $login = isset($_SESSION['login']) ? $_SESSION['login'] : "Usuário";
-                echo "<div class='fa fa-user' id='btn-login' title='Logado como $login'></div>";
-                } else {
-                    echo "<div class='fa fa-user' id='btn-login'></div>";
-                }
-                    ?>
-            
-        </div>
+    if (isset($_SESSION['sessaoConectado']) && $_SESSION['sessaoConectado']) {
+        $login = isset($_SESSION['login']) ? $_SESSION['login'] : "Usuário";
+        echo "
+        <div id='btn-login' class='icone-botao' title='Logado como $login'>
+            <i class='fa fa-user'></i>
+            <span>Login</span>
+        </div>";
+    } else {
+        echo "
+        <div id='btn-login' class='icone-botao'>
+            <i class='fa fa-user'></i>
+            <span>Login</span>
+        </div>";
+    }
+    ?>
+</div>
 </header>
         
         <!--
