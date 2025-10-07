@@ -10,7 +10,7 @@
             <a href="#banner">Início</a>
             <a href="#categoria">Categorias</a>
             <a href="#produtos">Produtos</a>
-            <a href="#rodape">Sobre</a>
+            <a href="quemSomos.php">Sobre</a>
 
             <?php 
             
@@ -26,7 +26,9 @@
         <div class="icones">
 
             <div class="fa fa-bars" id="btn-menu"></div>
+            <!--
             <div class="fa fa-search" id="btn-buscar"></div>
+             -->
             <div class="fa fa-shopping-cart" id="btn-carrinho"></div>
 
             <?php 
@@ -41,7 +43,8 @@
             
         </div>
 </header>
-
+        
+        <!--
         <form class="form-buscar">
 
             <input type="search" id="caixa-buscar" placeholder="Pesquise aqui">
@@ -49,6 +52,7 @@
             <label for="caixa-buscar" class="fa fa-search"></label>
 
         </form>
+            -->
 
 
         <form action="#" class="form-login">
@@ -60,7 +64,7 @@
                 $login = $_SESSION['login'];
                 echo "<p>Olá, <b>$login</b></p>";
     
-                echo "<a href='logout.php' class='btn'>Sair</a>";
+                echo "<a href='logout.php' class='btn' onclick='return confirmarLogout()'>Sair</a>";
             } else {
                 echo "<a href='cadastro.php' class='btn'>Cadastro</a>";
                 echo "<a href='login.php' class='btn'>Login</a>";
@@ -69,3 +73,4 @@
             ?>
             
         </form>
+<script src="js/logout.js"></script>

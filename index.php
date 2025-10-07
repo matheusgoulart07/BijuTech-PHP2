@@ -1,5 +1,11 @@
 <?php 
 session_start();
+include "util.php";
+$conn = conecta();
+
+$varSQL = "select id_produto, nome, valor_unitario, imagem from produto";
+$select = $conn->prepare($varSQL);
+$select->execute();
 ?>
 
 <!DOCTYPE html>
@@ -75,8 +81,9 @@ session_start();
     <section class="produtos" id="produtos">
         <h1 class="heading"><span>Produtos</span></h1>
 
-        <div class="swiper carrossel-produtos">
+       <div class="swiper carrossel-produtos">
                 <div class="swiper-wrapper">
+<<<<<<< HEAD
                     
                     <div class="swiper-slide">
                         <div class="box"> 
@@ -95,64 +102,31 @@ session_start();
                             <button class="btn">Adicionar ao Carrinho</button>
                         </div>
                     </div>
+=======
+                    <?php while ($produto= $select->fetch()): ?>
+>>>>>>> 78bb4e0c8b86cb900d95f58a3aec0e27ccb36f18
 
                     <div class="swiper-slide">
                         <div class="box"> 
-                            <img src="imagens/colar_prata.png">
-                            <h1>Colar Prata</h1>
-                            <div class="preco">R$45,00</div>
-                            <button class="btn">Adicionar ao Carrinho</button>
+                            <img src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
+                            <h1><?php echo $produto['nome']; ?></h1>
+                            <div class="preco"><?php echo($produto['valor_unitario']);?></div>
+                            <a class="btn" href="adicionarAoCarrinho.php?id_produto=<?php echo $produto['id_produto'];?>">Adicionar ao Carrinho</a>
                         </div>
                     </div>
-
-                    <div class="swiper-slide">
-                        <div class="box"> 
-                           <img src="imagens/pulseira_estrela.png">
-                            <h1>Pulseira Estrela</h1>
-                            <div class="preco">R$45,00</div>
-                            <button class="btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="box"> 
-                             <img src="imagens/anel_branco.png">
-                            <h1>Anel Branco</h1>
-                            <div class="preco">R$70,00</div>
-                            <button class="btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-
-                     <div class="swiper-slide">
-                        <div class="box"> 
-                           <img src="imagens/brinco_ponto_de_luz.png">
-                            <h1>Brinco Preto</h1>
-                            <div class="preco">R$45,00</div>
-                            <button class="btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-
-                     <div class="swiper-slide">
-                        <div class="box"> 
-                            <img src="imagens/pulseira_dourada2.png">
-                            <h1>Pulseira Dourada</h1>
-                            <div class="preco">R$70,00</div>
-                            <button class="btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-                     
+                    <?php endwhile; ?>
                 </div>
 
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
-
+   
         </div>
 
     </section>
     </main>
 
-    <?php include "rodape.php" ?>
+    <footer class="rodape"><?php include "rodape.php" ?></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/swiper.js"></script>

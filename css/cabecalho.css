@@ -10,6 +10,7 @@ header {
     justify-content: space-between;
     background: var(--branco);
     box-shadow: var(--box-shadow);
+    z-index: 1000;
 }
 
 .header .cabecalho {
@@ -53,6 +54,12 @@ header {
 
 .header .menu-nav a:hover {
     color: var(--gold);
+}
+
+.header .icones {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 /* Ícones da direita do cabeçalho */
@@ -183,4 +190,8 @@ header {
     text-transform: none;
 }
 
-
+.form-login .btn {
+    display: block;
+    width: 12rem;         
+    margin: 1rem auto;       
+}

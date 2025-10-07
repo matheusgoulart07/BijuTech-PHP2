@@ -17,8 +17,15 @@ if($_POST){
         $_SESSION['sessaoConectado'] = true;
         $_SESSION['admin'] = false;
         $_SESSION['login'] = $_POST['nome'];
-        header("Location: index.php");
-        exit("Redirecionando...");
+        $_SESSION['usuario'] = [
+            'nome' => $_POST['nome'],
+            'email' => $_POST['email']
+        ];
+
+        $redirect = $_GET['redirect'] ?? 'index.php';
+        header("Location: " . $redirect);
+        exit;
+
     }
 }
 
@@ -69,9 +76,7 @@ if($_POST){
     </main>
 
     <script src="js/script.js"></script>
-    <?php 
-        include "rodape.php";
-    ?>
+    <footer class="rodape"><?php include "rodape.php" ?></footer>
     
 </body>
 </html>

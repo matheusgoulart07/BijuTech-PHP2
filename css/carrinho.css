@@ -1,109 +1,163 @@
-.pagina-carrinho {
-    margin: 80px auto;
-    padding: 0 50px;   
-    max-width: 1200px; 
-}
-
-/* Tabela do Carrinho */
-table {
-    width: 90%;        
-    max-width: 1000px;  
-    margin: 0 auto;      
-    border-collapse: collapse;
-    background: var(--branco);
-}
-
-.info-carrinho {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.info-carrinho p {
-    font-size: 1.6rem;
-    font-weight: 600px;
-}
-
-.info-carrinho small {
-    font-size: 1.4rem; 
-    color: var(--verde);       
-}
-
-th {
-    text-align: left;
-    padding: 5px;
-    color: var(--preto-total);
-    background: var(--gold);
-    font-size: 1.7rem;
-    font-weight: bold;
-}
-
-td {
-    font-size: 1.5rem;
-    padding: 10px 5px;
-}
-
-td input {
-    width: 40px;
-    height: 30px;
-    padding: 5px;
+.carrinho-container {
+    padding: 4rem 9%;
     background: var(--cinza-claro);
-    color: var(--preto-total);
 }
 
-td a {
-    color: var(--vermelho);
-    font-size: 12px;
+/* Título */
+.titulo-carrinho {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--black);
+    margin-bottom: 3rem;
 }
 
-td img {
-    width: 80px;
-    height: 50px;
-    margin-right: 10px;
+/* Mensagem de carrinho vazio */
+.mensagem-vazia {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--cinza);
+    margin: 2rem 0;
 }
 
-.preco-total {
-   display: flex;
-    flex-direction: column; 
-    align-items: center;    
-    margin-top: 20px;
+/* Tabela */
+.carrinho-container .table-wrapper {
+    overflow-x: auto;
+    background: var(--branco);
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
 }
 
-.preco-total table {
-    border-top: 3px solid var(--gold);
+.tabela-carrinho {
     width: 100%;
-    max-width: 350px;
+    border-collapse: collapse;
+    text-align: left;
 }
 
-.preco-total td {
-    font-size: 1.6rem; 
+.carrinho-container .tabela-carrinho th {
+    background: var(--gold);
+    color: var(--branco);
+    font-size: 1.6rem;
+    padding: 1rem;
+    text-align: center;
 }
 
-.preco-total td:last-child {
-    font-weight: bold; 
-    font-size: 1.7rem; 
+.tabela-carrinho td {
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--cinza-claro);
+    text-align: center;
 }
 
-.preco-total .btn {
+/* Imagem e nome do produto */
+.imagem-produto {
+    width: 70px;
+    height: 70px;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    margin-right: 1rem;
+    vertical-align: middle;
+}
+
+.nome-produto {
+    font-weight: bold;
+    color: var(--black);
+}
+
+/* Formulário de quantidade */
+.form-quantidade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.input-quantidade {
+    width: 60px;
+    padding: 0.4rem;
+    border: 1px solid var(--cinza);
+    border-radius: 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Total geral */
+.total-geral td {
+    font-weight: bold;
+    font-size: 1.8rem;
+    background: var(--champagne);
+    color: var(--black);
+}
+
+.texto-total {
+    text-align: right;
+}
+
+.valor-total {
+    text-align: center;
+}
+
+/* Botões */
+.btn {
+    border: 0.2rem solid var(--black);
     margin-top: 1rem;
     display: inline-block;
-    padding: .8rem 3rem;
-    font-size: 1.7rem;
-    border-radius: .5rem;
-    border: .2rem solid var(--black);
-    background: none;
+    padding: 0.8rem 2.5rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
     color: var(--black);
     cursor: pointer;
+    background: none;
+    transition: all 0.3s ease;
 }
 
-.preco-total .btn:hover {
+.btn:hover {
     background: var(--gold);
     color: var(--branco);
 }
 
-td:last-child {
-    text-align: right;
+/* Ações no carrinho */
+.acoes-carrinho {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
 }
 
-th:last-child {
-    text-align: right;
+/* Corrige o layout do campo de quantidade e botão Atualizar */
+.form-quantidade {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    padding: 0;
 }
+
+.input-quantidade {
+    width: 55px;
+    padding: 0.3rem 0.4rem;
+    border: 1px solid var(--cinza);
+    border-radius: 0.4rem;
+    text-align: center;
+    font-size: 1.5rem;
+    background: var(--branco);
+}
+
+/* Botão Atualizar dentro da tabela */
+.form-quantidade .btn {
+    padding: 0.4rem 1.5rem;
+    font-size: 1.4rem;
+    border: 0.15rem solid var(--black);
+    background: none;
+    color: var(--black);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.form-quantidade .btn:hover {
+    background: var(--gold);
+    color: var(--branco);
+} 
