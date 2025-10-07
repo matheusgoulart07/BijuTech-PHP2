@@ -78,7 +78,7 @@
     <div class="links-login">
 
     <p>Não Possui uma Conta? <a href="cadastro.php">Crie Agora</a></p>
-    <p>Esqueceu sua Senha? <a href="#">Clique Aqui</a></p>
+    <p>Esqueceu sua Senha? <a href="esqueci.php">Clique Aqui</a></p>
 
     </div>
     </main>
