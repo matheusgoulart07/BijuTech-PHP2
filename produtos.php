@@ -5,6 +5,7 @@ $conn = conecta();
 
 $varSQL = "select * from produto where excluido = false";
 $select = $conn->query($varSQL);
+verifica($_SESSION['admin']);
 
 ?>
 

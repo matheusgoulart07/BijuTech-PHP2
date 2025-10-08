@@ -5,6 +5,7 @@ $conn = conecta();
 
 $varSQL = "select * from usuario";
 $select = $conn->query($varSQL);
+verifica($_SESSION['admin']);
 ?>
 
 <!DOCTYPE html>

@@ -18,4 +18,12 @@ function conecta($param = "")
     }
 }
 
+function verifica($param){
+
+    if($param == false){
+        header("Location: index.php");
+    }
+
+}
+
 ?>
