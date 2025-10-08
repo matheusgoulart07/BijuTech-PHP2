@@ -35,21 +35,24 @@
             </div>
 
             <?php 
-    if (isset($_SESSION['sessaoConectado']) && $_SESSION['sessaoConectado']) {
-        $login = isset($_SESSION['login']) ? $_SESSION['login'] : "Usuário";
-        echo "
-        <div id='btn-login' class='icone-botao' title='Logado como $login'>
-            <i class='fa fa-user'></i>
-            <span>Login</span>
-        </div>";
-    } else {
-        echo "
-        <div id='btn-login' class='icone-botao'>
-            <i class='fa fa-user'></i>
-            <span>Login</span>
-        </div>";
-    }
-    ?>
+                if (isset($_SESSION['sessaoConectado']) && $_SESSION['sessaoConectado']) {
+                    $loginCompleto = isset($_SESSION['login']) ? $_SESSION['login'] : "Usuário";
+                    $partesNome = explode(' ', trim($loginCompleto));
+                    $login = ucfirst(strtolower($partesNome[0]));
+
+                    echo "
+                    <div id='btn-login' class='icone-botao' title='Logado como $loginCompleto'>
+                        <i class='fa fa-user'></i>
+                        <span>Olá, $login</span>
+                    </div>";
+                } else {
+                    echo "
+                    <div id='btn-login' class='icone-botao'>
+                        <i class='fa fa-user'></i>
+                        <span>Login</span>
+                    </div>";
+                }
+                ?>
 </div>
 </header>
         
@@ -71,8 +74,6 @@
             
             if (isset($_SESSION['sessaoConectado']) && $_SESSION['sessaoConectado']) {
                 $login = $_SESSION['login'];
-                echo "<p>Olá, <b>$login</b></p>";
-    
                 echo "<a href='logout.php' class='btn' onclick='return confirmarLogout()'>Sair</a>";
             } else {
                 echo "<a href='cadastro.php' class='btn'>Cadastro</a>";

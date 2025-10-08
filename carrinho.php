@@ -48,7 +48,7 @@ $totalGeral = array_sum(array_column($_SESSION['carrinho'], 'total'));
         <h1 class="titulo-carrinho">Carrinho de Compras</h1>
 
         <?php if (empty($_SESSION['carrinho'])): ?>
-            <div class="mensagem-vazia">Seu carrinho está vazio.</div>
+            <div class="mensagem-vazio">Seu carrinho está vazio.</div>
             <a href="index.php" class="btn botao-continuar">Continuar comprando</a>
         <?php else: ?>
 
@@ -81,7 +81,7 @@ $totalGeral = array_sum(array_column($_SESSION['carrinho'], 'total'));
                                     <form method="post" class="form-quantidade">
                                         <input type="hidden" name="index" value="<?= $index ?>">
                                         <input type="number" name="quantidade" value="<?= $item['quantidade'] ?>" min="1" class="input-quantidade">
-                                        <button type="submit" name="atualizar" class="btn atualizar">Atualizar</button>
+                                        <button type="submit" name="atualizar" class="btn botao-atualizar">Atualizar</button>
                                     </form>
                                 </td>
                                 <td class="total-item">R$ <?= number_format($item['total'], 2, ',', '.') ?></td>

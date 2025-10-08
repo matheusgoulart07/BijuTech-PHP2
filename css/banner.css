@@ -3,11 +3,11 @@
     display: flex;
     justify-content: center;
     background: url(../imagens/Banner_Degrade.jpg) no-repeat;
-    background-position: center;
+    background-position: right center;
     background-size: cover;
     padding-top: 17rem;
     padding-bottom: 10rem;
-    margin: 0 8%;
+    margin: 0 0%;
 }
 
 .banner .conteudo {
@@ -19,7 +19,8 @@
 
 .banner .conteudo h3 {
     color: var(--preto-total);
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
 }
 
 .banner .conteudo h3 span {
@@ -28,9 +29,11 @@
 
 .banner .conteudo p {
     color: var(--cinza);
-    font-size: 1.7rem;
-    padding: 1rem 0;
-    line-height: 1.8;
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+    line-height: 1.5;
+    max-width: 60ch;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .banner-aneis {
