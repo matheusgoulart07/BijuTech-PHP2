@@ -37,8 +37,6 @@ $select->execute();
             <h3>Bijuteria de <span>Qualidade</span> para você!</h3>
             <p>E-Commerce Desenvolvido pela Equipe BijuTech do Segundo Ano
                 de Informática Noturno do CTI.</p>
-
-
         </div>
     </section>
 

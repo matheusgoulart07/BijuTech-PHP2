@@ -3,8 +3,9 @@ session_start();
 include "util.php"; 
 $conn = conecta();
 
-$varSQL = "select * from produto";
+$varSQL = "select * from produto where excluido = false";
 $select = $conn->query($varSQL);
+
 ?>
 
 <!DOCTYPE html>

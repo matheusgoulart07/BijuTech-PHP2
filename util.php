@@ -17,4 +17,5 @@ function conecta($param = "")
         exit;
     }
 }
+
 ?>

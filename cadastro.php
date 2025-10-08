@@ -72,6 +72,12 @@ if($_POST){
     <div id="erro-cadastro"></div>
     </form>
     </div>
+
+    <div class="links-login">
+
+    <p>Já Possui uma Conta? <a href="login.php">Entre Agora</a></p>
+
+    </div>
    
     </main>
 

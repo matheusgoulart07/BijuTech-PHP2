@@ -29,7 +29,6 @@ $select = $conn->query($varSQL);
         <tr>
             <th>Nome</th>
             <th>Email</th>
-            <th>Senha</th>
             <th>Telefone</th>
             <th>Ações</th>
         </tr>
@@ -42,7 +41,6 @@ $select = $conn->query($varSQL);
                     echo "<tr>
             <td>".$linha['nome']."</td>
             <td>".$linha['email']."</td>
-            <td>".$linha['senha']."</td>
             <td>".$linha['telefone']."</td>
             <td>
                 <a href='alterarUsuario.php?id_usuario=$id'>Alterar</a>
