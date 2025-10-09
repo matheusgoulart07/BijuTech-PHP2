@@ -35,8 +35,7 @@ $select->execute();
     <section class="banner" id="banner">
         <div class="conteudo">   
             <h3>Bijuteria de Qualidade</h3>
-            <p>E-Commerce Desenvolvido pela Equipe BijuTech do Segundo Ano
-                de Informática Noturno do CTI.</p>
+            <p> Sofisticação e atenção aos detalhes em nossas jóias.</p>
         </div>
     </section>
 

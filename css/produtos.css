@@ -140,3 +140,71 @@
     background: var(--preto-total);
     color: var(--gold);
 }
+
+.produtos .btn {
+    background: var(--champagne);
+    color: var(--branco);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+    cursor: pointer;
+    transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+
+.produtos .btn:hover {
+    background: linear-gradient(145deg, #f0c74c, #c89b3f);
+    color: #382e14;
+    box-shadow: 0 2px 20px rgba(255, 215, 0, 0.6);
+    transform: translateY(-2px);
+}
+
+.produtos .btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: width 0.4s ease-out, height 0.4s ease-out, opacity 0.4s ease-out, transform 0.4s ease-out;
+    z-index: -1;
+}
+
+.produtos .btn:hover::before {
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.produtos .btn::after {
+    content: '★';
+    position: absolute;
+    color: rgba(255, 255, 220, 0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
+}
+
+
+.produtos .btn:hover::after {
+    opacity: 1;
+    font-size: 20px;
+    top: 20%;
+    left: 15%;
+    transform: scale(0) translate(0, 0);
+    animation: sparkMove1 0.6s ease-out forwards;
+    animation-delay: 0.1s;
+}
+
+@keyframes sparkMove1 {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0); opacity: 0; top: 0%; left: 0%; }
+}
+
