@@ -14,7 +14,9 @@
         include "util.php";
         include "emails.php";
         
+        if (session_status() == PHP_SESSION_NONE) {
         session_start();
+          }
 
         if ( $_POST ) {   
           /*
