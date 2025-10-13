@@ -1,3 +1,17 @@
+<?php  
+
+session_start();
+include "util.php";
+$conn = conecta();
+
+$varSQL = "SELECT id_produto, nome, valor_unitario, imagem 
+           FROM produto 
+           WHERE excluido = false AND nome LIKE '%Brinco%'";
+$select = $conn->prepare($varSQL);
+$select->execute();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -32,50 +46,19 @@
         <h1 class="heading"><span>Brincos</span></h1>
 
         <div class="produtos-grid">
-
-        <div class="box">    
-                <img src="imagens/brinco_argola.png">
-                <h1>Brinco Argola Dourado</h1>
-                <div class="preco">R$50,00</div>
-                <a href="#" class="btn">Adicionar ao Carrinho</a>
-            </div>
-
-            <div class="box">    
-                <img src="imagens/brinco_ponto_de_luz.png">
-                <h1>Brinco Ponto de Luz Preto</h1>
-                <div class="preco">R$45,00</div>
-                <a href="#" class="btn">Adicionar ao Carrinho</a>
-            </div>
-
-            <div class="box">    
-                <img src="imagens/brinco_prata.png">
-                <h1>Brinco Prata</h1>
-                <div class="preco">R$70,00</div>
-                <a href="#" class="btn">Adicionar ao Carrinho</a>
-            </div>
-
-             <div class="box">    
-                <img src="imagens/brinco_coracao_dourado.png">
-                <h1>Brinco Coração</h1>
-                <div class="preco">R$70,00</div>
-                <a href="#" class="btn">Adicionar ao Carrinho</a>
-            </div>
-
-             <div class="box">    
-                <img src="imagens/brinco_lua.png">
-                <h1>Brinco Lua</h1>
-                <div class="preco">R$70,00</div>
-                <a href="#" class="btn">Adicionar ao Carrinho</a>
-            </div>
-
-
+            <?php while ($produto = $select->fetch()): ?>
+                <div class="box">    
+                    <img src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
+                    <h1><?php echo $produto['nome']; ?></h1>
+                    <div class="preco">R$<?php echo number_format($produto['valor_unitario'], 2, ',', '.'); ?></div>
+                    <a href="adicionarAoCarrinho.php?id_produto=<?php echo $produto['id_produto']; ?>" class="btn">Adicionar ao Carrinho</a>
+                </div>
+            <?php endwhile; ?>
         </div>
-
     </section>
-    </main>
+</main>
 
-    <footer class="rodape"><?php include "rodape.php" ?></footer>
-    <script src="js/script.js"></script>
-
+<footer class="rodape"><?php include "rodape.php" ?></footer>
+<script src="js/script.js"></script>
 </body>
 </html>

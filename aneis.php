@@ -1,3 +1,17 @@
+<?php  
+
+session_start();
+include "util.php";
+$conn = conecta();
+
+$varSQL = "SELECT id_produto, nome, valor_unitario, imagem 
+           FROM produto 
+           WHERE excluido = false AND nome LIKE '%Anel%'";
+$select = $conn->prepare($varSQL);
+$select->execute();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -16,65 +30,32 @@
 
     <?php include "cabecalho.php" ?>
 
-    <main>
+ <main>
     <section class="banner banner-aneis" id="banner">
         <div class="conteudo"> 
             <h3><span>Anéis</span></h3>
-            <p>E-Commerce Desenvolvido pela Equipe BijuTech do Segundo Ano
-                de Informática Noturno do CTI.</p>
-
+            <p>E-Commerce Desenvolvido pela Equipe BijuTech do Segundo Ano de Informática Noturno do CTI.</p>
             <a href="#produtos" class="btn">Ver Produtos</a>
         </div>
     </section>
 
     <section class="produtos" id="produtos">
-        
         <h1 class="heading"><span>Anéis</span></h1>
 
         <div class="produtos-grid">
-
-        <div class="box">    
-                <img src="imagens/anel_dourado2.png">
-                <h1>Anel Dourado</h1>
-                <div class="preco">R$50,00</div>
-                <a href="#" class="btn">Adicionar ao Carrinho</a>
-            </div>
-
-            <div class="box">    
-                <img src="imagens/anel_prata.png">
-                <h1>Anel Prata</h1>
-                <div class="preco">R$45,00</div>
-                <a href="#" class="btn">Adicionar ao Carrinho</a>
-            </div>
-
-            <div class="box">    
-                <img src="imagens/anel_pedra_azul.png">
-                <h1>Anel Pedra Azul</h1>
-                <div class="preco">R$70,00</div>
-                <a href="#" class="btn">Adicionar ao Carrinho</a>
-            </div>
-
-             <div class="box">    
-                <img src="imagens/anel_vermelho.png">
-                <h1>Anel Vermelho</h1>
-                <div class="preco">R$70,00</div>
-                <a href="#" class="btn">Adicionar ao Carrinho</a>
-            </div>
-
-             <div class="box">    
-                <img src="imagens/anel_branco.png">
-                <h1>Anel Branco</h1>
-                <div class="preco">R$70,00</div>
-                <a href="#" class="btn">Adicionar ao Carrinho</a>
-            </div>
-
-
+            <?php while ($produto = $select->fetch()): ?>
+                <div class="box">    
+                    <img src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
+                    <h1><?php echo $produto['nome']; ?></h1>
+                    <div class="preco">R$<?php echo number_format($produto['valor_unitario'], 2, ',', '.'); ?></div>
+                    <a href="adicionarAoCarrinho.php?id_produto=<?php echo $produto['id_produto']; ?>" class="btn">Adicionar ao Carrinho</a>
+                </div>
+            <?php endwhile; ?>
         </div>
-
     </section>
-    </main>
+</main>
 
-    <footer class="rodape"><?php include "rodape.php" ?></footer>
-    <script src="js/script.js"></script>
+<footer class="rodape"><?php include "rodape.php" ?></footer>
+<script src="js/script.js"></script>
 </body>
 </html>

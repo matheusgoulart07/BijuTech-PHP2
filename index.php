@@ -87,7 +87,7 @@ $select->execute();
                         <div class="box"> 
                             <img src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
                             <h1><?php echo $produto['nome']; ?></h1>
-                            <div class="preco"><?php echo($produto['valor_unitario']);?></div>
+                            <div class="preco">R$<?php echo($produto['valor_unitario']);?></div>
                             <a class="btn" href="adicionarAoCarrinho.php?id_produto=<?php echo $produto['id_produto'];?>">Adicionar ao Carrinho</a>
                         </div>
                     </div>
