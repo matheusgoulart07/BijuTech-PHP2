@@ -28,6 +28,7 @@
           abaixo do form de login  -->
 
      <form class="esqueci-form" action='' method='post'>
+        <h2>Esqueci a Senha</h2>
         <p class="esqueci-texto">Enviar recuperação da senha para</p><br>
         <input type='email' name='email' placeholder="seu email">
         <input type='submit' value='Enviar'>
@@ -89,7 +90,7 @@
      ?>
      </main>
 
-        <script src="script.js"></script>
+        <script src="js/script.js"></script>
         <footer class="rodape"><?php include "rodape.php" ?></footer>
 
      </body>

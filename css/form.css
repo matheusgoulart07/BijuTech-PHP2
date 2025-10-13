@@ -87,6 +87,13 @@
     padding: 2rem;
 }
 
+.esqueci-container h2 {
+    font-size: 2.4rem;
+    color: var(--dourado);
+    margin-bottom: 2rem; /* espaço entre o título e o box */
+    text-align: center;
+}
+
 .esqueci-form {
     background: var(--branco);
     padding: 3rem 4rem;
@@ -100,7 +107,7 @@
 /* Título */
 .esqueci-form h2 {
     font-size: 2.4rem;
-    color: var(--black);
+    color: var(--dourado);
     margin-bottom: 2rem;
 }
 
@@ -145,7 +152,6 @@
     color: var(--dourado);
 }
 
-/* Link de voltar */
 .esqueci-form a {
     display: inline-block;
     margin-top: 1.5rem;

@@ -8,7 +8,7 @@
         <nav class="menu-nav">
 
             <a href="index.php">Início</a>
-            <a href="#categoria">Categorias</a>
+            <a href="index.php#categoria">Categorias</a>
             <a href="#produtos">Produtos</a>
             <a href="#rodape">Sobre</a>
 
