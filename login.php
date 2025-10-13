@@ -64,7 +64,7 @@
 
         <div>
         <label for="usuario">Usuário:</label>
-        <input type="text" name="usuario" id="usuario" placeholder="seu usuario" required> <br><br> 
+        <input type="text" name="usuario" id="usuario" placeholder="seu email" required> <br><br> 
         </div>
 
         <div>

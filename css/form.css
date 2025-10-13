@@ -78,3 +78,83 @@
 .form-crud {
     margin-top: 5rem;
 }
+
+.esqueci-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 2rem;
+}
+
+.esqueci-form {
+    background: var(--branco);
+    padding: 3rem 4rem;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Título */
+.esqueci-form h2 {
+    font-size: 2.4rem;
+    color: var(--black);
+    margin-bottom: 2rem;
+}
+
+/* Texto de instrução */
+.esqueci-form p {
+    font-size: 1.4rem;
+    color: var(--preto-total);
+    margin-bottom: 2rem;
+}
+
+/* Campo de e-mail */
+.esqueci-form input[type="email"] {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--cinza-claro);
+    border-radius: 0.5rem;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    transition: border-color 0.2s;
+}
+
+.esqueci-form input[type="email"]:focus {
+    border-color: var(--gold);
+    outline: none;
+}
+
+/* Botão de envio */
+.esqueci-form input[type="submit"] {
+    background: var(--gold);
+    color: var(--branco);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.esqueci-form input[type="submit"]:hover {
+    background: var(--preto-total);
+    color: var(--dourado);
+}
+
+/* Link de voltar */
+.esqueci-form a {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    color: var(--dourado);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.esqueci-form a:hover {
+    color: var(--preto-total);
+}

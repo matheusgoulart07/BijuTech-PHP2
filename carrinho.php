@@ -112,8 +112,9 @@ $totalGeral = array_sum(array_column($_SESSION['carrinho'], 'total'));
         <?php endif; ?>
     </main>
 
-    <footer class="rodape"><?php include "rodape.php" ?></footer>
     <script src="script.js"></script>
+    <footer class="rodape"><?php include "rodape.php" ?></footer>
+    
 </body>
 </html>
 

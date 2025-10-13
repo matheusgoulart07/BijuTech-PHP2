@@ -1,12 +1,35 @@
 <html>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BijuTech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!--Link dos ícones (busca, carrinho, login, etc)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Link dos ícones (busca, carrinho, login, etc)-->
+
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  
+  <?php include "cabecalho.php" ?>
+
+  <main class="esqueci-container">
+
      <!-- para usar o "esqueci a senha"
           coloque um link pra esse arquivo no login.php 
           abaixo do form de login  -->
 
-     <form action='' method='post'>
-        Enviar recuperacao da senha para<br>
-        <input type='email' name='email'>
+     <form class="esqueci-form" action='' method='post'>
+        <p class="esqueci-texto">Enviar recuperação da senha para</p><br>
+        <input type='email' name='email' placeholder="seu email">
         <input type='submit' value='Enviar'>
      </form>
      
@@ -64,4 +87,10 @@
           echo "<br><br><a href='login.php'>Voltar</a>";
         }    
      ?>
+     </main>
+
+        <script src="script.js"></script>
+        <footer class="rodape"><?php include "rodape.php" ?></footer>
+
+     </body>
 </html>
