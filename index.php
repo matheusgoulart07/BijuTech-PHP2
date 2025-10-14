@@ -75,34 +75,36 @@ $select->execute();
     </section>
 
 
-    <section class="produtos" id="produtos">
+        <section class="produtos" id="produtos">
         <h1 class="heading"><span>Produtos</span></h1>
 
-       <div class="swiper carrossel-produtos">
-                <div class="swiper-wrapper">
-
-                    <?php while ($produto= $select->fetch()): ?>
-
+        <div class="swiper carrossel-produtos">
+            <div class="swiper-wrapper">
+                <?php while ($produto = $select->fetch()): ?>
                     <div class="swiper-slide">
-                        <a href="produto.php?id_produto=<?php echo $produto['id_produto']; ?>">
-                            <div class="box"> 
-                            <img src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
-                            <h1><?php echo $produto['nome']; ?></h1>
-                            <div class="preco">R$<?php echo($produto['valor_unitario']);?></div>                        
-                        </div>                     
-                        </a>    
-                        <div class="botao carrinho"><a class="btn" href="adicionarAoCarrinho.php?id_produto=<?php echo $produto['id_produto'];?>">Adicionar ao Carrinho</a></div>
+                        <div class="box">
+                            <a href="produto.php?id_produto=<?php echo $produto['id_produto']; ?>">
+                                <img src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
+                                <h1><?php echo $produto['nome']; ?></h1>
+                                <div class="preco">R$<?php echo number_format($produto['valor_unitario'], 2, ',', '.'); ?></div>
+                            </a>
+
+                            <div class="botao carrinho">
+                                <a class="btn" href="adicionarAoCarrinho.php?id_produto=<?php echo $produto['id_produto']; ?>">
+                                    Adicionar ao Carrinho
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <?php endwhile; ?>
-                </div>
+                <?php endwhile; ?>
+            </div>
 
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-   
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
-
     </section>
+
     </main>
 
     <footer class="rodape"><?php include "rodape.php" ?></footer>
