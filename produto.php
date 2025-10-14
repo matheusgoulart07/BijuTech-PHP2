@@ -24,12 +24,11 @@
 <body>
     <section class="produto">
         <div class="produto">
-            <h2><?php echo $produto['nome']?></h2>
-            <img src="<?php echo $produto['imagem']?>" alt="<?php echo $produto['nome']?>">
-            <p><?php echo $produto['descricao']?></p>
-            <p>R$<?php echo number_format($produto['valor_unitario'], 2, ',', '.');?></p>
-            <a href="adicionarAoCarrinho.php?id_produto=<?php echo $id_produto; ?>" class="btn">Adicionar ao Carrinho</a>
-        </div>
+            <h2><?php echo $id_produto['nome']?></h2>
+            <img src="<?php echo $id_produto['imagem']?>" alt="<?php echo $id_produto['nome']?>">
+            <p><?php echo $id_produto['descricao']?></p>
+            <p>R$<?php echo number_format($id_produto['valor_unitario'], 2, ',', '.');?></p>
+            <div class="botao carrinho"><a class="btn" href="adicionarAoCarrinho.php?id_produto=<?php echo $produto['id_produto'];?>">Adicionar ao Carrinho</a></div>
     </section>
 </body>
 </html>
