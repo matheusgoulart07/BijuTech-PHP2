@@ -11,6 +11,16 @@
 @import url('responsivo.css');
 @import url('rodape.css');
 
+/* Estilos para o cabeçalho de navegação */
+.navbar {
+    transition: background-color 0.5s ease-in-out;
+    background-color: transparent;
+}
+
+.navbar.scrolled {
+    background-color: #343a40; /* Cor de fundo do navbar quando rolado - ajuste conforme necessário */
+}
+
 
 
 

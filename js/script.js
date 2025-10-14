@@ -119,3 +119,18 @@ if (formCadastro) {
         }
     });
 }
+
+// Animação da barra de navegação
+document.addEventListener('DOMContentLoaded', function () {
+    const nav = document.querySelector('.navbar');
+
+    if (nav) {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) { // Começa a transição após rolar 50px
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    }
+});
