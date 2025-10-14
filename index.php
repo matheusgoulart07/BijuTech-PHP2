@@ -84,12 +84,14 @@ $select->execute();
                     <?php while ($produto= $select->fetch()): ?>
 
                     <div class="swiper-slide">
-                        <div class="box"> 
+                        <a href="produto.php?id_produto=<?php echo $produto['id_produto']; ?>">
+                            <div class="box"> 
                             <img src="<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
                             <h1><?php echo $produto['nome']; ?></h1>
-                            <div class="preco">R$<?php echo($produto['valor_unitario']);?></div>
-                            <a class="btn" href="adicionarAoCarrinho.php?id_produto=<?php echo $produto['id_produto'];?>">Adicionar ao Carrinho</a>
-                        </div>
+                            <div class="preco">R$<?php echo($produto['valor_unitario']);?></div>                        
+                        </div>                     
+                        </a>    
+                        <div class="botao carrinho"><a class="btn" href="adicionarAoCarrinho.php?id_produto=<?php echo $produto['id_produto'];?>">Adicionar ao Carrinho</a></div>
                     </div>
                     <?php endwhile; ?>
                 </div>
