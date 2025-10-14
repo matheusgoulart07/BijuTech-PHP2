@@ -1,11 +1,11 @@
 <?php 
 session_start();
-include "util.php"; 
-$conn = conecta();
+include "util.php";
+verifica($_SESSION['admin']); 
 
+$conn = conecta();
 $varSQL = "select * from produto where excluido = false";
 $select = $conn->query($varSQL);
-verifica($_SESSION['admin']);
 
 ?>
 

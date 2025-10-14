@@ -12,13 +12,13 @@
             <a href="#produtos">Produtos</a>
             <a href="#rodape">Sobre</a>
 
-            <?php 
-            
-            if (isset($_SESSION['sessaoConectado']) && $_SESSION['sessaoConectado'] && isset($_SESSION['admin']) && $_SESSION['admin']) {
-                echo "<a href='usuarios.php'>Gerenciar Usuários</a>";
-                echo "<a href='produtos.php'>Gerenciar Produtos</a>";
-            }
-            
+           <?php 
+                if (
+                    isset($_SESSION['sessaoConectado']) && $_SESSION['sessaoConectado'] &&
+                    isset($_SESSION['admin']) && $_SESSION['admin']
+                ) {
+                    echo "<a href='painelAdmin.php' class='painel-adm-link'>Painel ADM</a>";
+                }
             ?>
 
         </nav>

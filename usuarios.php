@@ -1,11 +1,11 @@
 <?php 
 session_start();
 include "util.php";
-$conn = conecta();
+verifica($_SESSION['admin']);
 
+$conn = conecta();
 $varSQL = "select * from usuario";
 $select = $conn->query($varSQL);
-verifica($_SESSION['admin']);
 ?>
 
 <!DOCTYPE html>

@@ -3,7 +3,7 @@ session_start();
 include 'util.php';
 
 // Cria conexão PDO
-$pdo = conecta();
+$conn = conecta();
 
 // Obtém parâmetros da URL
 $id_produto = isset($_GET['id_produto']) ? (int) $_GET['id_produto'] : null;
@@ -18,14 +18,14 @@ if ($quantidade <= 0) {
 }
 
 // Consulta o produto no banco
-$sql = "SELECT id_produto, nome, valor_unitario, descricao, imagem 
+$varSQL = "SELECT id_produto, nome, valor_unitario, descricao, imagem 
         FROM produto
         WHERE id_produto = :id_produto AND excluido = FALSE";
 
-$stmt = $pdo->prepare($sql);
-$stmt->bindParam(':id_produto', $id_produto, PDO::PARAM_INT);
-$stmt->execute();
-$produto = $stmt->fetch(PDO::FETCH_ASSOC);
+$select = $conn->prepare($varSQL);
+$select->bindParam(':id_produto', $id_produto, PDO::PARAM_INT);
+$select->execute();
+$produto = $select->fetch(PDO::FETCH_ASSOC);
 
 if ($produto) {
     // Cria item do carrinho

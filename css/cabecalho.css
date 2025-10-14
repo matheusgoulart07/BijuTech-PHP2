@@ -24,6 +24,10 @@ header {
     gap: 0.5rem;
 }
 
+.header .cabecalho span {
+    color: var(--black);
+}
+
 .header .cabecalho:hover span {
     color: var(--gold);
 }
@@ -44,11 +48,10 @@ header {
     gap: 2rem;
     font-size: 1.7rem;
     margin: 0 1rem;
-    color: var(--black);
 }
 
 .header .menu-nav a {
-    color: var(--black);
+    color: var(--preto-total);
     text-decoration: none;
 }
 
@@ -68,18 +71,13 @@ header {
     width: 4.5rem;
     line-height: 4.5rem;
     border-radius: .5rem;
-    background: var(--cinza-claro);
-    color: var(--black);
     font-size: 2rem;
     margin-right: .3rem;
     text-align: center;
     cursor: pointer;
 }
 
-.header .icones div:hover {
-    background: var(--gold);
-    color: var(--branco);
-}
+
 
 #btn-menu {
     display: none;
@@ -89,53 +87,6 @@ header {
 {
     right: 2rem;
     transition: .4s linear;
-}
-
-/* Ícone da Lupa */
-.form-buscar {
-    position: fixed;
-    top: 90px;
-    right: -110%;
-    width: 50rem;
-    height: 5rem;
-    background: var(--branco);
-    border-radius: .5rem;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    box-shadow: var(--box-shadow);
-    z-index: 9999;
-    transition: .4s linear;
-}
-
-
-.form-buscar.active {
-    right: 2rem;
-   /* transition: .4s linear; */
-}
-
-
-.form-buscar input {
-    height: 100%;
-    width: 100%;
-    background: none;
-    text-transform: none;
-    font-size: 1.6rem;
-    color: var(--black);
-    padding: 0 1.5rem;
-}
-
-
-.form-buscar label {
-    font-size: 2.2rem;
-    padding-right: 1.5rem;
-    color: var(--black);
-    cursor: pointer;
-}
-
-
-.form-buscar label:hover {
-    color: var(--gold);
 }
 
 /* Ícone do Carrinho */
@@ -205,7 +156,7 @@ header {
     border-radius: 0.5rem;
     padding: 0 1rem;
     height: 4.5rem;
-    color: var(--black);
+    color: var(--dourado);
     font-size: 1.6rem;
     cursor: pointer;
     transition: all 0.3s ease;

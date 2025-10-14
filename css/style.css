@@ -1,5 +1,6 @@
 /* Arquivo principal que importa todos */
 @import url('geral.css');
+@import url('admin.css');
 @import url('cabecalho.css');
 @import url('carrinho.css');
 @import url('crud.css');
