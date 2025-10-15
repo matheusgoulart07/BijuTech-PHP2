@@ -1,0 +1,191 @@
+/* Adicionar no início do arquivo css/pgs-admin.css */
+
+/* Garante que a estrutura básica da página ocupe 100% da altura da tela */
+html, body {
+    height: 100%;
+}
+
+/* Transforma o body em um container flexível que organiza os filhos (header, main, footer) em coluna */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ESSA É A PARTE MAIS IMPORTANTE:
+   Instrui o elemento <main> (conteúdo principal) a "crescer" e ocupar todo o espaço
+   disponível, empurrando o footer para o final da página. */
+main.flex-fill {
+    flex-grow: 1;
+}
+.admin-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.admin-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.admin-title {
+    font-family: 'Marcellus', serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #c9b06a;
+    padding-bottom: 0.5rem;
+}
+
+.table-responsive-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.admin-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+.admin-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.admin-table ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.admin-button {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #c9b06a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.admin-button:hover {
+    background-color: #b8a160;
+}
+
+.admin-button-delete {
+    background-color: #dc3545;
+}
+
+.admin-button-delete:hover {
+    background-color: #c82333;
+}
+
+.admin-button-view {
+    background-color: #0d6efd;
+}
+
+.admin-button-view:hover {
+    background-color: #0b5ed7;
+}
+
+.admin-button-success {
+    background-color: #198754;
+}
+
+.admin-button-success:hover {
+    background-color: #157347;
+}
+
+.admin-form-inline {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 0;
+}
+
+.filter-bar {
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-bar label {
+    font-weight: 500;
+}
+
+select,
+input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    height: 38px;
+    box-sizing: border-box;
+}
+
+.success-message {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.admin-actions-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 220px;
+}
+
+.admin-actions-column .admin-form-inline {
+    width: 100%;
+}
+
+.admin-actions-column .admin-form-inline select,
+.admin-actions-column .admin-form-inline input[type="text"] {
+    flex-grow: 1;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .admin-title {
+        font-size: 1.8rem;
+    }
+    .admin-content {
+        padding: 1rem;
+    }
+}

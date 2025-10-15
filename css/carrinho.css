@@ -187,3 +187,36 @@
     .acoes-carrinho { flex-direction: column; }
     .acoes-carrinho .btn { width: 100%; text-align: center; }
 }
+
+/* Adicionar ao final do arquivo css/carrinho.css */
+
+/* --- ESTILOS PARA QUANDO O CARRINHO ESTÁ VAZIO --- */
+
+/* Transforma o container principal em um flexbox para centralizar o conteúdo */
+.carrinho-container.vazio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    text-align: center;
+}
+
+/* Remove a margem inferior padrão do título quando o carrinho está vazio */
+.carrinho-container.vazio .titulo-carrinho {
+    margin-bottom: 1.5rem;
+}
+
+.carrinho-container.vazio .mensagem-vazio {
+    font-size: 1.8rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+}
+
+/* Container para os botões do carrinho vazio */
+.botoes-carrinho-vazio {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 300px; /* Limita a largura dos botões */
+}

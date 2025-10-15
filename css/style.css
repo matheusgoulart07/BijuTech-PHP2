@@ -24,7 +24,24 @@
     background-color: #343a40; /* Cor de fundo do navbar quando rolado - ajuste conforme necessário */
 }
 
+/* Adicionar ao final do arquivo css/style.css */
 
+/* --- CORREÇÃO PARA RODAPÉ FLUTUANTE --- */
+/* Garante que a estrutura básica ocupe 100% da altura da tela */
+html, body {
+    height: 100%;
+}
+
+/* Transforma o body em um container flex que organiza os filhos em coluna */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Instrui o <main> a crescer e ocupar todo o espaço disponível, empurrando o footer para baixo */
+main.flex-fill {
+    flex-grow: 1;
+}
 
 
 

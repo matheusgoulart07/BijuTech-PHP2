@@ -55,13 +55,17 @@ $totalGeral = array_sum(array_column($_SESSION['carrinho'], 'total'));
 
     <?php include "cabecalho.php"; ?>
 
-    <main class="carrinho-container">
+    <main class="flex-fill carrinho-container <?php echo empty($_SESSION['carrinho']) ? 'vazio' : ''; ?>">
+        
         <h1 class="titulo-carrinho">Carrinho de Compras</h1>
 
         <?php if (empty($_SESSION['carrinho'])): ?>
+
             <p class="mensagem-vazio">Seu carrinho está vazio.</p>
-            <a href="index.php" class="btn btn-center">Continuar comprando</a>
-            <a href="meusPedidos.php" class="btn btn-Meus Pedidos">Meus Pedidos</a>
+            <div class="botoes-carrinho-vazio">
+                <a href="index.php" class="btn">Continuar comprando</a>
+                <a href="meusPedidos.php" class="btn">Meus Pedidos</a>
+            </div>
 
         <?php else: ?>
 
@@ -74,7 +78,7 @@ $totalGeral = array_sum(array_column($_SESSION['carrinho'], 'total'));
                             <th>Preço</th>
                             <th>Quantidade</th>
                             <th>Total</th>
-                            </tr>
+                        </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($_SESSION['carrinho'] as $index => $item): ?>
@@ -98,8 +102,7 @@ $totalGeral = array_sum(array_column($_SESSION['carrinho'], 'total'));
                                 </td>
                                 
                                 <td data-label="Total">R$ <?= number_format($item['total'], 2, ',', '.') ?></td>
-                                
-                                </tr>
+                            </tr>
                         <?php endforeach; ?>
                     </tbody>
                     <tfoot>
@@ -122,7 +125,6 @@ $totalGeral = array_sum(array_column($_SESSION['carrinho'], 'total'));
 
         <?php endif; ?>
     </main>
-    
     <?php include "rodape.php"; ?>
     <script src="js/script.js"></script>
     

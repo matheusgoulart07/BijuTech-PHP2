@@ -1,0 +1,118 @@
+/* css/pedidos.css */
+
+/* 1. LAYOUT PRINCIPAL */
+.pedidos-container {
+    padding: 4rem 2%;
+    background-color: #f8f9fa; /* Um cinza bem claro para o fundo */
+}
+
+.pedidos-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.pedidos-titulo {
+    font-family: 'Marcellus', serif;
+    text-align: center;
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 2.5rem;
+}
+
+/* 2. TABELA DE PEDIDOS */
+.table-responsive-wrapper {
+    overflow-x: auto;
+}
+
+.pedidos-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.6rem;
+}
+
+.pedidos-table th,
+.pedidos-table td {
+    padding: 1.2rem 1rem;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #eee;
+}
+
+.pedidos-table thead th {
+    background-color: #fafafa;
+    font-weight: bold;
+    color: #555;
+}
+
+.pedidos-table tbody tr:hover {
+    background-color: #fdfdfd;
+}
+
+.pedidos-table td ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+/* 3. ESTADO VAZIO (QUANDO NÃO HÁ PEDIDOS) */
+.pedidos-vazio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 40vh; /* Garante uma altura mínima para centralizar */
+    padding: 2rem;
+}
+
+.pedidos-vazio .icone-vazio {
+    font-size: 6rem;
+    color: #c9b06a; /* Dourado do site */
+    margin-bottom: 2rem;
+}
+
+.pedidos-vazio .mensagem-vazia {
+    font-size: 1.8rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+}
+
+/* 4. RESPONSIVIDADE DA TABELA */
+@media (max-width: 768px) {
+    .pedidos-table thead {
+        display: none;
+    }
+
+    .pedidos-table tr {
+        display: block;
+        margin-bottom: 2rem;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 1rem;
+    }
+
+    .pedidos-table td {
+        display: block;
+        text-align: right;
+        padding: 1rem;
+        position: relative;
+        border-bottom: 1px dotted #ccc;
+    }
+
+    .pedidos-table td:last-child {
+        border-bottom: none;
+    }
+
+    .pedidos-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        font-weight: bold;
+        color: #333;
+    }
+}
