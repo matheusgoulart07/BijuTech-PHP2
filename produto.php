@@ -27,9 +27,11 @@
     <title><?php echo $produto_detalhe ? htmlspecialchars($produto_detalhe['nome']) : 'Produto não encontrado'; ?></title>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/produto-detalhe.css"> 
 </head>
 <body>
+
+    <?php include "cabecalho.php" ?>
+
     <main>
         <section class="pagina-produto">
             <?php if ($produto_detalhe): ?>
@@ -49,6 +51,9 @@
             <?php endif; ?>
         </section>
     </main>
+
+    <script src="js/script.js"></script>
+    <footer class="rodape"><?php include "rodape.php" ?></footer>
 
     </body>
 </html>

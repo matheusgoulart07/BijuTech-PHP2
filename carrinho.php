@@ -61,6 +61,8 @@ $totalGeral = array_sum(array_column($_SESSION['carrinho'], 'total'));
         <?php if (empty($_SESSION['carrinho'])): ?>
             <p class="mensagem-vazio">Seu carrinho está vazio.</p>
             <a href="index.php" class="btn btn-center">Continuar comprando</a>
+            <a href="meusPedidos.php" class="btn btn-Meus Pedidos">Meus Pedidos</a>
+
         <?php else: ?>
 
             <div class="table-wrapper">

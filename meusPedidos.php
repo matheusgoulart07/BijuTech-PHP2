@@ -20,7 +20,7 @@ if (!$conn || !($conn instanceof PDO)) {
 */
 
 // --- Busca pedidos do usuário ---
-$select = $pdo->prepare("
+$select = $conn->prepare("
     SELECT id_compra, status, data, acrescimo_total, sessao
     FROM compra
     WHERE fk_usuario = :id_usuario
@@ -44,9 +44,13 @@ function traduzStatus($status) {
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Meus Pedidos</title>
     <link rel="stylesheet" href="css/style.css">
+     <!--Link dos ícones (busca, carrinho, login, etc)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Link dos ícones (busca, carrinho, login, etc)-->
 </head>
 <body>
 <?php include "cabecalho.php"; ?>
@@ -105,6 +109,7 @@ function traduzStatus($status) {
 <?php } ?>
 </main>
 
+<script src="js/script.js"></script>
 <footer class="rodape"><?php include "rodape.php"; ?></footer>
 </body>
 </html>

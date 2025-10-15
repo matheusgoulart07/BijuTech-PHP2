@@ -10,6 +10,12 @@ if (!isset($_SESSION['usuario'])) {
 $carrinho = $_SESSION['carrinho'] ?? [];
 $usuario = $_SESSION['usuario'];
 
+// Evita acesso direto se o carrinho estiver vazio
+if (empty($carrinho)) {
+    header("Location: carrinho.php");
+    exit;
+}
+
 function calcularTotal($carrinho) {
     $total = 0;
     foreach ($carrinho as $item) {
@@ -27,7 +33,6 @@ function calcularTotal($carrinho) {
     <title>Finalizar Compra</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/finalizar-compra.css">
 </head>
 <body>
 
@@ -56,21 +61,14 @@ function calcularTotal($carrinho) {
                 </li>
             </ul>
 
+            
             <form action="pedidoConfirmado.php" method="POST" class="form-finalizar">
-                <label for="pagamento">Forma de Pagamento:</label>
-                <select name="pagamento" id="pagamento" required>
-                    <option value="Cartão de Crédito">Cartão de Crédito</option>
-                    <option value="Cartão de Débito">Cartão de Débito</option>
-                    <option value="Pix">Pix</option>
-                    <option value="Boleto">Boleto</option>
-                    <option value="Dinheiro">Dinheiro</option>
-                </select>
-
                 <button type="submit" class="btn">Confirmar Pedido</button>
             </form>
         </section>
     </main>
 
+    <script src="js/script.js"></script>
     <?php include "rodape.php"; ?>
 
 </body>

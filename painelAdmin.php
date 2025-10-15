@@ -34,7 +34,7 @@ $statusFiltro = isset($_GET['status']) ? $_GET['status'] : "";
             <a href="produtos.php" class="btn painel">Gerenciar Produtos</a>
             <a href="usuarios.php" class="btn painel">Gerenciar Usuários</a>
             <a href="adminPedidos.php" class="btn painel">Painel Administrativo</a>
-            <a href="Admin_compras.php" class="btn painel">Gerenciar Compras</a>
+            <a href="adminCompras.php" class="btn painel">Gerenciar Compras</a>
         </nav>
 
         <!-- Filtro de status de pedido -->
@@ -89,6 +89,7 @@ $statusFiltro = isset($_GET['status']) ? $_GET['status'] : "";
         </section>
     </main>
 
+     <script src="js/script.js"></script>
      <footer class="rodape"><?php include "rodape.php" ?></footer>
 
 </body>
