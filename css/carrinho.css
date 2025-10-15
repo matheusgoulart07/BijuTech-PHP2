@@ -1,9 +1,15 @@
+/* css/carrinho.css (Final com botões compactos) */
+
+/* =================================
+   ESTILOS GERAIS DO CARRINHO
+================================= */
 .carrinho-container {
-    padding: 4rem 9%;
+    padding: 4rem 2%;
     background: var(--cinza-claro);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Título */
 .titulo-carrinho {
     text-align: center;
     font-size: 3rem;
@@ -11,153 +17,173 @@
     margin-bottom: 3rem;
 }
 
-/* Mensagem de carrinho vazio */
-.mensagem-vazio {
-    text-align: center;
-    font-size: 1.8rem;
-    color: var(--cinza);
-    margin: 2rem 0;
-}
-
-/* Tabela */
 .carrinho-container .table-wrapper {
-    overflow-x: auto;
     background: var(--branco);
     border-radius: 1rem;
     box-shadow: var(--box-shadow);
-    padding: 2rem;
+    padding: 1rem;
 }
 
+/* =================================
+   ESTILOS DA TABELA
+================================= */
 .tabela-carrinho {
     width: 100%;
     border-collapse: collapse;
-    text-align: left;
+    table-layout: fixed;
 }
 
-.carrinho-container .tabela-carrinho th {
+.tabela-carrinho th,
+.tabela-carrinho td {
+    padding: 1rem 0.4rem; 
+    font-size: 1.6rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tabela-carrinho thead th {
     background: var(--gold);
     color: var(--branco);
-    font-size: 1.6rem;
-    padding: 1rem;
-    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
 
-.tabela-carrinho td {
-    padding: 1rem;
-    font-size: 1.5rem;
+.tabela-carrinho tbody tr {
     border-bottom: 1px solid var(--cinza-claro);
-    text-align: center;
+}
+.tabela-carrinho tbody tr:last-of-type {
+    border-bottom: none;
 }
 
-/* Imagem e nome do produto */
+/* --- LARGURA DAS 5 COLUNAS --- */
+.tabela-carrinho th:nth-child(1) { width: 25%; } /* Produto */
+.tabela-carrinho th:nth-child(2) { width: 30%; } /* Descrição */
+.tabela-carrinho th:nth-child(3) { width: 15%; } /* Preço */
+.tabela-carrinho th:nth-child(4) { width: 15%; } /* Quantidade */
+.tabela-carrinho th:nth-child(5) { width: 15%; } /* Total */
+
+
+/* --- CONTEÚDO DAS CÉLULAS --- */
 .imagem-produto {
-    width: 70px;
-    height: 70px;
-    border-radius: 0.5rem;
+    width: 50px; height: 50px;
+    border-radius: .5rem;
     object-fit: cover;
-    margin-right: 1rem;
-    vertical-align: middle;
+    display: block;
+    margin: 0 auto .5rem;
 }
 
 .nome-produto {
     font-weight: bold;
+    font-size: 1.7rem;
     color: var(--black);
 }
 
-/* Formulário de quantidade */
+/* NOVO: Container para os controles de quantidade */
+.controles-quantidade {
+    display: flex;
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: center;   /* Centraliza horizontalmente */
+    gap: 0.6rem;           /* Espaço compacto entre os itens */
+}
+
 .form-quantidade {
-    display: inline-flex;
-    align-items: center;
+    display: flex;
     justify-content: center;
-    gap: 0.4rem;
+    align-items: center;
+    gap: .5rem;
 }
 
 .input-quantidade {
-    width: 55px;
-    height: 34px; /* altura fixa igual ao botão */
-    padding: 0.3rem 0.5rem;
+    width: 50px;
+    padding: .5rem;
     border: 1px solid var(--cinza);
-    border-radius: 0.4rem;
+    border-radius: .4rem;
     text-align: center;
-    font-size: 1.4rem;
-    background: var(--branco);
-    line-height: 1; /* evita que o texto empurre a altura */
 }
 
-/* Total geral */
+.botao-atualizar {
+    padding: .5rem 1rem;
+    border: .15rem solid var(--black);
+    background: none;
+    color: var(--black);
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+    width: 100%; /* Faz o botão ocupar o espaço do form */
+}
+.botao-atualizar:hover {
+    background: var(--gold);
+    color: var(--branco);
+}
+
+/* NOVO: Estilo para o link "Remover" */
+.link-remover {
+    color: var(--vermelho);
+    font-size: 1.3rem;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.link-remover:hover {
+    color: var(--black);
+}
+
+
+/* --- RODAPÉ DA TABELA --- */
 .total-geral td {
     font-weight: bold;
-    font-size: 1.8rem;
-    background: var(--champagne);
-    color: var(--black);
-}
-
-.texto-total {
-    text-align: right;
-}
-
-.valor-total {
-    text-align: center;
-}
-
-/* Botões */
-.btn {
-    border: 0.2rem solid var(--black);
-    margin-top: 1rem;
-    display: inline-block;
-    padding: 0.8rem 2.5rem;
-    font-size: 1.6rem;
-    border-radius: 0.5rem;
-    color: var(--black);
-    cursor: pointer;
-    background: none;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    background: var(--gold);
-    color: var(--branco);
-}
-
-.form-quantidade .botao-atualizar {
-    height: 34px; 
-    padding: 0 1.2rem; 
-    font-size: 1.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 0.15rem solid var(--black);
-    background: none;
-    color: var(--black);
-    border-radius: 0.5rem;
-    cursor: pointer;
-}
-
-.form-quantidade .botao-atualizar:hover {
-    background: var(--gold);
-    color: var(--branco);
-} 
-
-.btn.remover:hover {
-    background: var(--vermelho);
-    color: var(--branco);
-}
-
-/* Ações no carrinho */
-.acoes-carrinho {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 3rem;
+    font-size: 1.9rem;
+    background: var(--marfim);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
 .total-geral .texto-total {
     text-align: right;
-    padding-right: 1rem;
+    padding-right: 2rem;
 }
 
 .total-geral .valor-total {
-    text-align: left;
-    padding-left: 1rem;
+    text-align: center;
+    color: var(--verde);
+}
+
+.acoes-carrinho {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 0 1rem;
+}
+
+/* ============================================
+   RESPONSIVIDADE PARA CELULARES
+============================================ */
+@media (max-width: 768px) {
+    /* (O restante do CSS responsivo continua o mesmo e vai funcionar perfeitamente com a nova estrutura) */
+    .carrinho-container { padding: 2rem 3%; }
+    .tabela-carrinho thead { display: none; }
+    .tabela-carrinho tr {
+        display: block; margin-bottom: 2rem; border: 1px solid var(--cinza-claro);
+        border-radius: .5rem; padding: 1rem;
+    }
+    .tabela-carrinho .total-geral tr { border: none; padding: 0; }
+    .tabela-carrinho td {
+        display: block; text-align: right; padding: .8rem;
+        position: relative; border-bottom: 1px dotted var(--cinza-claro);
+    }
+    .tabela-carrinho td:last-child { border-bottom: none; }
+    .tabela-carrinho td::before {
+        content: attr(data-label); position: absolute; left: 1rem;
+        font-weight: bold; color: var(--black);
+    }
+    .tabela-carrinho td[data-label="Produto"] {
+        text-align: center; padding-bottom: 1.5rem;
+    }
+    .tabela-carrinho td[data-label="Produto"]::before { display: none; }
+    .controles-quantidade { align-items: flex-end; }
+    .total-geral { font-size: 1.8rem; }
+    .acoes-carrinho { flex-direction: column; }
+    .acoes-carrinho .btn { width: 100%; text-align: center; }
 }

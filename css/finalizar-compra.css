@@ -1,0 +1,110 @@
+/* css/finalizar-compra.css */
+
+/* Container principal da página de finalização */
+.finalizar-compra {
+    max-width: 700px; /* Define uma largura máxima para o conteúdo */
+    margin: 2rem auto; /* Centraliza o container na página */
+    padding: 3rem;
+    background: var(--branco);
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+}
+
+/* Parágrafo de saudação ao usuário */
+.finalizar-compra p {
+    font-size: 1.6rem;
+    color: var(--cinza);
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--cinza-claro);
+}
+
+.finalizar-compra p strong {
+    color: var(--black);
+    font-weight: bold;
+}
+
+/* Título "Resumo do Carrinho" */
+.finalizar-compra h2 {
+    font-size: 2.2rem;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+/* Lista de itens do carrinho */
+.lista-carrinho {
+    list-style: none;
+    margin-bottom: 3rem;
+}
+
+.lista-carrinho li {
+    display: flex;
+    justify-content: space-between; /* Alinha nome à esquerda e preço à direita */
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px dotted var(--cinza-claro);
+}
+
+.lista-carrinho li span {
+    color: var(--cinza);
+}
+
+/* Item do total do carrinho */
+.item-total {
+    margin-top: 1rem;
+    border-top: 2px solid var(--black);
+    border-bottom: none !important; /* Remove a borda pontilhada do total */
+}
+
+.item-total strong {
+    font-size: 1.8rem;
+    color: var(--black);
+}
+
+/* Estiliza o preço final para se destacar */
+.item-total strong:last-child {
+    color: var(--verde);
+}
+
+/* Formulário de pagamento */
+.form-finalizar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espaçamento entre os elementos do formulário */
+}
+
+.form-finalizar label {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.form-finalizar select {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: 1px solid var(--cinza);
+    border-radius: .5rem;
+    background-color: var(--branco);
+}
+
+.form-finalizar select:focus {
+    border-color: var(--gold);
+    outline: none;
+}
+
+/* Botão de confirmar, aproveitando o estilo do .btn */
+.form-finalizar .btn {
+    padding: 1rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    width: 100%; /* Faz o botão ocupar a largura toda */
+    background: var(--gold);
+    color: var(--branco);
+    border: none;
+}
+
+.form-finalizar .btn:hover {
+    background: var(--black);
+    color: var(--dourado);
+}

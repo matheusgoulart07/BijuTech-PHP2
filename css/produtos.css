@@ -57,26 +57,65 @@
     font-size: 1.4rem;
 }
 
-/* --- INÍCIO DA CORREÇÃO --- */
-.swiper-button-next, .swiper-button-prev {
+/* --- INÍCIO DA CORREÇÃO SWIPER --- */
+/* Estilo base para as setas de navegação */
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
     color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, color 0.3s;
 }
 
-.swiper-button-next:hover, .swiper-button-prev:hover {
+/* Estiliza o ícone da seta ('>' e '<') dentro do botão */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+/* Efeito Hover */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
     background: var(--gold);
     color: var(--branco);
 }
 
+/* Posicionamento padrão para telas maiores (Desktop) */
 .swiper-button-prev {
-    /* Corrigido de 'left: -2px;' para não estourar a tela */
-    left: 10px; 
+    left: -15px;
+}
+.swiper-button-next {
+    right: -15px;
 }
 
-.swiper-button-next {
-    /* Corrigido de 'right: -2px;' para não estourar a tela */
-    right: 10px;
+/* AJUSTE PARA TABLETS (iPad Air, etc.) */
+@media (max-width: 1024px) {
+    .swiper-button-prev {
+        left: 10px; /* Coloca a seta DENTRO do carrossel */
+    }
+    .swiper-button-next {
+        right: 10px; /* Coloca a seta DENTRO do carrossel */
+    }
 }
-/* --- FIM DA CORREÇÃO --- */
+
+/* AJUSTE PARA CELULARES */
+@media (max-width: 767px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none; /* Esconde as setas em telas pequenas */
+    }
+}
+/* --- FIM DA CORREÇÃO SWIPER --- */
 
 .swiper-pagination {
     margin-top: 2.5rem;
@@ -133,16 +172,6 @@
     font-size: 2rem;
     color: var(--verde);
     padding: .5rem 0;
-}
-
-.produtos .btn {
-    background: var(--champagne);
-    color: var(--branco);
-}
-
-.produtos .btn:hover {
-    background: var(--preto-total);
-    color: var(--gold);
 }
 
 .produtos .btn {

@@ -1,0 +1,93 @@
+/* css/produto-detalhe.css */
+
+.pagina-produto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 9%;
+}
+
+.produto-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a linha de baixo em telas pequenas */
+    gap: 4rem; /* Espaço entre a imagem e os detalhes */
+    background: var(--branco);
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Wrapper da Imagem (coluna da esquerda) */
+.produto-imagem-wrapper {
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.produto-imagem {
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+    border-radius: .5rem;
+}
+
+/* Detalhes do Produto (coluna da direita) */
+.produto-detalhes {
+    flex: 1 1 350px; /* Ocupa mais espaço se disponível */
+    display: flex;
+    flex-direction: column;
+}
+
+.produto-titulo {
+    font-size: 3rem;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+.produto-descricao {
+    font-size: 1.6rem;
+    color: var(--cinza);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    flex-grow: 1; /* Empurra o preço e o botão para baixo se a descrição for curta */
+}
+
+.produto-preco {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--verde); /* Usando a variável de cor de preço do produtos.css */
+    margin-bottom: 2rem;
+}
+
+/* Ajusta o botão que já existe no geral.css */
+.produto-detalhes .btn {
+    align-self: flex-start; /* Alinha o botão à esquerda dentro da coluna */
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+}
+
+/* --- Media Query para telas menores (celulares) --- */
+@media (max-width: 768px) {
+    .produto-container {
+        flex-direction: column; /* Empilha a imagem e os detalhes verticalmente */
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .produto-detalhes {
+        text-align: center; /* Centraliza o texto em telas pequenas */
+    }
+
+    .produto-detalhes .btn {
+        align-self: center; /* Centraliza o botão */
+        width: 100%;
+    }
+
+    .produto-titulo {
+        font-size: 2.5rem;
+    }
+}

@@ -3,30 +3,42 @@ session_start();
 include "util.php";
 $conn = conecta();
 
+// Inicializa o carrinho se não existir
 if (!isset($_SESSION['carrinho'])) {
     $_SESSION['carrinho'] = [];
 }
 
+// Lógica para atualizar a quantidade de um item
 if (isset($_POST['atualizar'])) {
     $index = $_POST['index'];
-    $quantidade = max(1, (int) $_POST['quantidade']);
-    $_SESSION['carrinho'][$index]['quantidade'] = $quantidade;
-    $_SESSION['carrinho'][$index]['total'] = $_SESSION['carrinho'][$index]['preco'] * $quantidade;
+    $quantidade = max(1, (int) $_POST['quantidade']); // Garante que a quantidade seja no mínimo 1
+    
+    // Verifica se o item ainda existe antes de atualizar
+    if (isset($_SESSION['carrinho'][$index])) {
+        $_SESSION['carrinho'][$index]['quantidade'] = $quantidade;
+        $_SESSION['carrinho'][$index]['total'] = $_SESSION['carrinho'][$index]['preco'] * $quantidade;
+    }
+    
     header("Location: carrinho.php");
     exit();
 }
 
+// Lógica para remover um item do carrinho
 if (isset($_GET['remover'])) {
     $index = $_GET['remover'];
-    unset($_SESSION['carrinho'][$index]);
-    $_SESSION['carrinho'] = array_values($_SESSION['carrinho']); 
+    
+    if (isset($_SESSION['carrinho'][$index])) {
+        unset($_SESSION['carrinho'][$index]);
+        $_SESSION['carrinho'] = array_values($_SESSION['carrinho']); // Reindexa o array para evitar buracos
+    }
+
     header("Location: carrinho.php");
     exit();
 }
 
+// Calcula o total geral do carrinho
 $totalGeral = array_sum(array_column($_SESSION['carrinho'], 'total'));
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,11 +46,10 @@ $totalGeral = array_sum(array_column($_SESSION['carrinho'], 'total'));
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho - BijuTech</title>
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Ícones e estilos -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carrinho.css">
 </head>
 <body>
 
@@ -48,8 +59,8 @@ $totalGeral = array_sum(array_column($_SESSION['carrinho'], 'total'));
         <h1 class="titulo-carrinho">Carrinho de Compras</h1>
 
         <?php if (empty($_SESSION['carrinho'])): ?>
-            <div class="mensagem-vazio">Seu carrinho está vazio.</div>
-            <a href="index.php" class="btn botao-continuar">Continuar comprando</a>
+            <p class="mensagem-vazio">Seu carrinho está vazio.</p>
+            <a href="index.php" class="btn btn-center">Continuar comprando</a>
         <?php else: ?>
 
             <div class="table-wrapper">
@@ -61,40 +72,38 @@ $totalGeral = array_sum(array_column($_SESSION['carrinho'], 'total'));
                             <th>Preço</th>
                             <th>Quantidade</th>
                             <th>Total</th>
-                            <th>Ações</th>
-                        </tr>
+                            </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($_SESSION['carrinho'] as $index => $item): ?>
-                            <tr class="item-carrinho">
-                                <td class="produto">
-                                    <?php if (!empty($item['imagem'])): ?>
-                                       <img src="<?= htmlspecialchars($item['imagem']) ?>" width="60" alt="<?= htmlspecialchars($item['nome']) ?>" class="imagem-produto">
-                                    <?php else: ?>
-                                        <img src="https://via.placeholder.com/60x60?text=Sem+Foto" alt="Sem imagem" class="imagem-produto">
-                                    <?php endif; ?>
+                            <tr>
+                                <td data-label="Produto">
+                                    <img src="<?= htmlspecialchars($item['imagem']) ?>" alt="<?= htmlspecialchars($item['nome']) ?>" class="imagem-produto">
                                     <span class="nome-produto"><?= htmlspecialchars($item['nome']) ?></span>
                                 </td>
-                                <td class="descricao"><?= htmlspecialchars($item['descricao']) ?></td>
-                                <td class="preco">R$ <?= number_format($item['preco'], 2, ',', '.') ?></td>
-                                <td class="quantidade">
-                                    <form method="post" class="form-quantidade">
-                                        <input type="hidden" name="index" value="<?= $index ?>">
-                                        <input type="number" name="quantidade" value="<?= $item['quantidade'] ?>" min="1" class="input-quantidade">
-                                        <button type="submit" name="atualizar" class="btn botao-atualizar">Atualizar</button>
-                                    </form>
+                                <td data-label="Descrição"><?= htmlspecialchars($item['descricao']) ?></td>
+                                <td data-label="Preço">R$ <?= number_format($item['preco'], 2, ',', '.') ?></td>
+                                
+                                <td data-label="Quantidade">
+                                    <div class="controles-quantidade">
+                                        <form method="post" class="form-quantidade">
+                                            <input type="hidden" name="index" value="<?= $index ?>">
+                                            <input type="number" name="quantidade" value="<?= $item['quantidade'] ?>" min="1" class="input-quantidade">
+                                            <button type="submit" name="atualizar" class="botao-atualizar">Atualizar</button>
+                                        </form>
+                                        <a href="carrinho.php?remover=<?= $index ?>" class="link-remover" onclick="return confirm('Tem certeza que deseja remover este item?')">Remover</a>
+                                    </div>
                                 </td>
-                                <td class="total-item">R$ <?= number_format($item['total'], 2, ',', '.') ?></td>
-                                <td class="acoes">
-                                    <a href="carrinho.php?remover=<?= $index ?>" class="btn remover" onclick="return confirm('Deseja remover este item?')">Remover</a>
-                                </td>
-                            </tr>
+                                
+                                <td data-label="Total">R$ <?= number_format($item['total'], 2, ',', '.') ?></td>
+                                
+                                </tr>
                         <?php endforeach; ?>
                     </tbody>
                     <tfoot>
                         <tr class="total-geral">
                             <td colspan="4" class="texto-total">Total Geral:</td>
-                            <td colspan="2" class="valor-total">R$ <?= number_format($totalGeral, 2, ',', '.') ?></td>
+                            <td class="valor-total">R$ <?= number_format($totalGeral, 2, ',', '.') ?></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -111,10 +120,9 @@ $totalGeral = array_sum(array_column($_SESSION['carrinho'], 'total'));
 
         <?php endif; ?>
     </main>
-
+    
+    <?php include "rodape.php"; ?>
     <script src="js/script.js"></script>
-    <footer class="rodape"><?php include "rodape.php" ?></footer>
     
 </body>
 </html>
-
