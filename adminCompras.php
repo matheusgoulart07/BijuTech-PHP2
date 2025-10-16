@@ -82,7 +82,7 @@ $compras = $sel->fetchAll(PDO::FETCH_ASSOC);
                                             </select>
                                             <button type="submit" class="admin-button">Salvar</button>
                                         </form>
-                                        <a href="detalhe_compra.php?id=<?= $c['id_compra'] ?>" class="admin-button admin-button-view">Ver Itens</a>
+                                        <a href="detalhesCompra.php?id=<?= $c['id_compra'] ?>" class="admin-button admin-button-view">Ver Itens</a>
                                     </div>
                                     </td>
                             </tr>

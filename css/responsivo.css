@@ -16,11 +16,21 @@
         padding: 2rem 9%;
     }
 
+    /* ===== Banner ===== */
     .banner {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         padding-top: 12rem;
         padding-bottom: 6rem;
-        border-radius: 4rem;
+        border-radius: 3rem;
         margin: 0 3%;
+        text-align: center;
+    }
+
+    .banner .conteudo {
+        max-width: 90%;
+        margin: 0 auto;
     }
 
     .banner .conteudo h3 {
@@ -82,14 +92,21 @@
         display: block;
     }
 
+    /* ===== Banner ===== */
     .banner {
         background-size: contain;
         background-repeat: no-repeat;
-        background-position: right center;
+        background-position: center;
         padding-top: 10rem;
         padding-bottom: 5rem;
         border-radius: 2rem;
         margin: 0 2%;
+        text-align: center;
+    }
+
+    .banner .conteudo {
+        max-width: 95%;
+        margin: 0 auto;
     }
 
     .banner .conteudo h3 {
@@ -172,17 +189,28 @@
         font-size: 2.5rem;
     }
 
+    /* ===== Banner ===== */
     .banner {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         padding-top: 8rem;
         padding-bottom: 4rem;
-        border-radius: 1rem;
+        border-radius: 1.5rem;
         margin: 0 1rem;
+        text-align: center;
     }
 
     .banner img {
         max-width: 100%;
         height: auto;
         display: block;
+        margin: 0 auto;
+    }
+
+    .banner .conteudo {
+        width: 90%;
+        margin: 0 auto;
     }
 
     .banner .conteudo h3 {

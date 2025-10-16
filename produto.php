@@ -43,7 +43,11 @@
                         <h2 class="produto-titulo"><?php echo htmlspecialchars($produto_detalhe['nome']); ?></h2>
                         <p class="produto-descricao"><?php echo htmlspecialchars($produto_detalhe['descricao']); ?></p>
                         <p class="produto-preco">R$<?php echo number_format($produto_detalhe['valor_unitario'], 2, ',', '.'); ?></p>
-                        <a class="btn" href="adicionarAoCarrinho.php?id_produto=<?php echo $produto_detalhe['id_produto']; ?>">Adicionar ao Carrinho</a>
+                       <div class="botao carrinho">
+                            <a class="btn" href="adicionarAoCarrinho.php?id_produto=<?php echo $produto_detalhe['id_produto']; ?>">
+                                Adicionar ao Carrinho
+                            </a>
+                       </div>
                     </div>
                 </div>
             <?php else: ?>

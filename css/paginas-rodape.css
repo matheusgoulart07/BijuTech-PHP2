@@ -1,0 +1,137 @@
+/* Container específico da página Quem Somos */
+
+.quem-somos {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.8;
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  color: #333;
+}
+
+/* Título principal */
+.quem-somos .titulo-principal {
+  font-size: 2.2rem;
+  color: #444;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Linha abaixo do título */
+.quem-somos .linha-titulo {
+  width: 80px;
+  height: 3px;
+  border: none;
+  margin: 0 auto 2rem auto;
+  background: var(--gold);
+  border-radius: 5px;
+}
+
+/* Parágrafos padrão */
+.quem-somos .texto {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  font-size: 1.7rem;
+  color: var(--preto-total);
+}
+
+/* Parágrafo destaque (MUITO OBRIGADO) */
+.quem-somos .texto-destaque {
+  text-align: center;
+  font-weight: bold;
+  color: var(--gold);
+  font-size: 1.7rem;
+  margin: 2rem 0 1rem 0;
+}
+
+/* ===================== */
+/* Cards da equipe */
+/* ===================== */
+.titulo-equipe {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.team-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.team-card {
+  background: var(--branco);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--box-shadow);
+}
+
+.team-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid var(--gold);
+}
+
+.team-card h3 {
+  font-size: 1.2rem;
+  color: var(--black);
+  margin-bottom: 0.3rem;
+}
+
+.team-card p {
+  font-size: 0.95rem;
+  color: var(--cinza);
+}
+
+.secao-mvv {
+  margin-top: 3rem;
+}
+
+.titulo-mvv {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+}
+
+.mvv-bloco {
+  margin-bottom: 2rem;
+}
+
+.mvv-bloco h3 {
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.mvv-bloco p {
+  font-size: 1.7rem;
+  color: var(--preto-total);
+  text-align: justify;
+  line-height: 1.8;
+}
+
+.mvv-bloco ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  font-size: 1.7rem;
+  color: var(--preto-total);
+}
+
+.mvv-bloco li {
+  margin-bottom: 0.5rem;
+}

@@ -1,9 +1,11 @@
 .banner {
+    border: 3px solid var(--champagne);
     border-radius: 3rem;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     background: url(../imagens/Banner_Degrade.jpg) no-repeat;
-    background-position: right center;
+    background-position: center;
     background-size: cover;
     padding-top: 17rem;
     padding-bottom: 10rem;

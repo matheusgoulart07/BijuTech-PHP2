@@ -61,8 +61,8 @@ if ($_POST) {
     <form id="form-login" action="login.php" method="post">
 
         <div>
-        <label for="usuario">Usuário:</label>
-        <input type="text" name="usuario" id="usuario" placeholder="seu usuario" required> <br><br> 
+        <label for="usuario">E-mail:</label>
+        <input type="text" name="usuario" id="usuario" placeholder="seu email" required> <br><br> 
         </div>
 
         <div>

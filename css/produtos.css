@@ -174,7 +174,7 @@
     padding: .5rem 0;
 }
 
-.produtos .btn {
+.botao.carrinho .btn {
     background: var(--champagne);
     color: var(--branco);
     position: relative;
@@ -186,14 +186,14 @@
 }
 
 
-.produtos .btn:hover {
+.botao.carrinho .btn:hover {
     background: linear-gradient(145deg, #f0c74c, #c89b3f);
     color: #382e14;
     box-shadow: 0 2px 20px rgba(255, 215, 0, 0.6);
     transform: translateY(-2px);
 }
 
-.produtos .btn::before {
+.botao.carrinho .btn::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -208,14 +208,14 @@
     z-index: -1;
 }
 
-.produtos .btn:hover::before {
+.botao.carrinho .btn:hover::before {
     width: 200px;
     height: 200px;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
 }
 
-.produtos .btn::after {
+.botao.carrinho .btn::after {
     content: '★';
     position: absolute;
     color: rgba(255, 255, 220, 0.95);
@@ -225,7 +225,7 @@
 }
 
 
-.produtos .btn:hover::after {
+.botao.carrinho .btn:hover::after {
     opacity: 1;
     font-size: 20px;
     top: 20%;
