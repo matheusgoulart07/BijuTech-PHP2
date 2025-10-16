@@ -26,4 +26,16 @@ function verifica($param){
 
 }
 
+function valorsql1 ($paramConn, $paramSQL) 
+    {
+      // com query vc nao passa parametros, apenas $conn e frase SQL  
+      $select = $paramConn->query($paramSQL);
+      $select->execute();
+      $linha = $select->fetch();
+      return $linha[0];
+      /* a funcao precisa funcionar qquer q seja o campo que esta sendo pedido,
+         nesse ponto vc nao saberá qual o nome do campo q deve retornar, 
+         por isso, vc usa o indice ZERO -  a vantagem desse comando eh 
+         receber um unico valor */
+    }
 ?>

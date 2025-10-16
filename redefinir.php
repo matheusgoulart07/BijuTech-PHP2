@@ -28,13 +28,13 @@
 
                // obtem a senha do banco
                $sql = "select senha from usuario where email='$email'";              
-               $senha = ValorSQL1($conn, $sql);     
+               $senha = valorsql1($conn, $sql);     
                
                // confere se o token eh VERDADEIRO
                if ( $senha == $token )  {
                     if ( $senha1 == $senha2 ) {
                          $senha1 = password_hash($senha1,PASSWORD_DEFAULT);
-                         ExecutaSQL($conn, "update usuario set senha='$senha1' where email='$email'");
+                         valorsql1($conn, "update usuario set senha='$senha1' where email='$email'");
                          echo "<br>Senha alterada com sucesso !!";
                     } else {
                          echo "<br>Senhas estão diferentes";
