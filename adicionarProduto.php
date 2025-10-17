@@ -8,7 +8,7 @@ $conn = conecta();
 
   <head>
   <meta charset="UTF-8">
-    <title>Adicionar Produto</title>
+    <title>Adicionar Produto - BijuTech</title>
     <link rel="stylesheet" href="css/style.css">
     <!--Link dos ícones (busca, carrinho, login, etc)-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

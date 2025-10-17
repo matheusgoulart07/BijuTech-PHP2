@@ -1,10 +1,10 @@
 <html>
      <h3>Redefinir a senha</h3>
      <form action='' method='post'>  
-          Senha (6 digitos)<br>
-          <input type='password' name='senha1' maxlength='6'><br>
+          Senha<br>
+          <input type='password' name='senha1' maxlength='20'><br>
           Redigite a senha<br>
-          <input type='password' name='senha2' maxlength='6'><br>                
+          <input type='password' name='senha2' maxlength='20'><br>                
           <input type='submit' value='Alterar'>
      </form>
 

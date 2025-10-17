@@ -32,7 +32,7 @@ $select->execute();
  <main>
     <section class="banner banner-aneis" id="banner">
         <div class="conteudo"> 
-            <h3><span>Anéis</span></h3>
+            <h3><span>Anéis - BijuTech</span></h3>
             <p>E-Commerce Desenvolvido pela Equipe BijuTech do Segundo Ano de Informática Noturno do CTI.</p>
             <a href="#produtos" class="btn">Ver Produtos</a>
         </div>

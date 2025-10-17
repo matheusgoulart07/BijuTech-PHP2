@@ -22,7 +22,7 @@ $itens = $sel->fetchAll(PDO::FETCH_ASSOC);
 
     <?php include "cabecalho.php" ?>
 
-    <h1>Detalhes da Compra</h1>
+    <h1>Detalhes da Compra - BijuTech</h1>
 
     <h2>Itens da Compra #<?= $id ?></h2>
     <table border="1" cellpadding="6"><tr><th>Produto</th><th>Quantidade</th><th>Valor Unit.</th></tr>

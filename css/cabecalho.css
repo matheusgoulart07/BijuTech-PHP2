@@ -147,6 +147,10 @@ header {
     margin: 1rem auto;       
 }
 
+.form-login .a {
+    text-align: center;
+}
+
 .icone-botao {
     display: flex;
     align-items: center;

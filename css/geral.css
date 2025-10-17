@@ -37,6 +37,7 @@ html {
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding-top: 7rem;
+    height: 100%;
 }
 
 body {
@@ -47,11 +48,27 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    height: 100%;
 }
 
 main {
     flex: 1;
     padding-bottom: 6rem;
+}
+
+/* Instrui o <main> a crescer e ocupar todo o espaço disponível, empurrando o footer para baixo */
+main.flex-fill {
+    flex-grow: 1;
+}
+
+/* Estilos para o cabeçalho de navegação */
+.navbar {
+    transition: background-color 0.5s ease-in-out;
+    background-color: transparent;
+}
+
+.navbar.scrolled {
+    background-color: #343a40; /* Cor de fundo do navbar quando rolado - ajuste conforme necessário */
 }
 
 section {

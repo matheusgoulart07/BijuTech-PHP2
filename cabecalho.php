@@ -9,7 +9,7 @@
 
             <a href="index.php">Início</a>
             <a href="index.php#categoria">Categorias</a>
-            <a href="#produtos">Produtos</a>
+            <a href="index.php#produtos">Produtos</a>
             <a href="#rodape">Sobre</a>
 
            <?php 

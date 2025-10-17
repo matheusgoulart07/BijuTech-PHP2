@@ -98,25 +98,6 @@
     right: -15px;
 }
 
-/* AJUSTE PARA TABLETS (iPad Air, etc.) */
-@media (max-width: 1024px) {
-    .swiper-button-prev {
-        left: 10px; /* Coloca a seta DENTRO do carrossel */
-    }
-    .swiper-button-next {
-        right: 10px; /* Coloca a seta DENTRO do carrossel */
-    }
-}
-
-/* AJUSTE PARA CELULARES */
-@media (max-width: 767px) {
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: none; /* Esconde as setas em telas pequenas */
-    }
-}
-/* --- FIM DA CORREÇÃO SWIPER --- */
-
 .swiper-pagination {
     margin-top: 2.5rem;
     position: relative;
