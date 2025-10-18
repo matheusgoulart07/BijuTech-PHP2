@@ -32,7 +32,7 @@ try {
         VALUES (NOW(), :acrescimo_total, :sessao, :fk_usuario, 'reservado')
         RETURNING id_compra
     ");
-    $stmt->bindValue(':acrescimo_total', $total);
+    $stmt->bindValue(':acrescimo_total', $acrescimo_total ?? 0);
     $stmt->bindValue(':sessao', session_id());
     $stmt->bindValue(':fk_usuario', $id_usuario, PDO::PARAM_INT);
     $stmt->execute();
